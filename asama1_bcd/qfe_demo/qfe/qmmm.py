@@ -139,6 +139,8 @@ def hf_in_field(fr, symbols, basis=None, embed=True):
     mf = _embed(scf.RHF(mol).density_fit(), fr, embed)
     mf.conv_tol = 1e-9
     mf.kernel()
+    if not mf.converged:
+        raise RuntimeError("HF yakınsamadı")
     return mf
 
 
@@ -178,6 +180,25 @@ class Labeler:
         self.cache_dft = {}           # key -> dict(emb, vac, mm_int, mm_coul)   [kJ/mol]
         self.cache_high = {}          # key -> dict(emb_*, vac_*)                [kJ/mol]
         self.timings = {"dft": [], "high": []}
+        self._sig = None
+
+    def signature(self):
+        """Etiketlerin hangi yapılara ve QM ayarlarına ait olduğunu gösteren parmak izi.
+        Havuz yeniden üretilirse (02 tekrar çalışırsa) ya da qm_cutoff_A / baz / fonksiyonel /
+        aktif uzay değişirse değişir; böylece eski etiketler yeni yapılarla karışmaz."""
+        if self._sig is None:
+            import hashlib
+
+            h = hashlib.sha1()
+            for leg in sorted(self.pools):
+                X, B = self.pools[leg]
+                h.update(leg.encode())
+                h.update(np.ascontiguousarray(X).tobytes())
+                h.update(np.ascontiguousarray(B).tobytes())
+            p = P()
+            h.update(repr([p["qm_cutoff_A"], p["qm_basis"], p["qm_xc"], tuple(p["cas"])]).encode())
+            self._sig = h.hexdigest()[:16]
+        return self._sig
 
     def _fr(self, leg, i):
         X, B = self.pools[leg]
@@ -229,12 +250,17 @@ class Labeler:
 
     def to_dict(self):
         return dict(
+            signature=self.signature(),
             dft=[[k[0], k[1], v] for k, v in self.cache_dft.items()],
             high=[[k[0], k[1], v] for k, v in self.cache_high.items()],
             timings=self.timings,
         )
 
     def load_dict(self, d):
+        if d and d.get("signature") != self.signature():
+            print("Uyarı: kayıtlı QM etiketleri başka bir havuza veya QM ayarına ait; "
+                  "kullanılmıyor, yeniden hesaplanacak.")
+            return
         for leg, i, v in d.get("dft", []):
             self.cache_dft[(leg, int(i))] = v
         for leg, i, v in d.get("high", []):

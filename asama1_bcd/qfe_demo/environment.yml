@@ -19,6 +19,7 @@ dependencies:
   - jupyterlab
   - nbconvert
   - ipykernel
+  - pytest
   - py3dmol
   - pip
   - pip:

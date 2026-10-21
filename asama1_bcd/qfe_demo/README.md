@@ -32,6 +32,7 @@ qfe_demo/
 │   └── plotting.py
 ├── notebooks/             ← 00 … 07: ekibe anlatım sırası
 ├── tools/run_all.sh       ← bütün notebook'ları sırayla çalıştırır
+├── tests/                 ← hızlı birim testleri (python -m pytest tests)
 ├── data/                  ← indirilen girdiler (ilk çalıştırmada oluşur)
 └── results/<ön_ayar>/     ← sonuçlar, süreler, Hamiltoniyen dosyaları
 ```
@@ -145,6 +146,20 @@ H = SparsePauliOp.from_list([(lab, complex(re, im)) for lab, (re, im) in pl])
 # H'yi qiskit-ibm-runtime'daki Estimator ile bir VQE ansatz'ına uygulayabilirsiniz (IBM Quantum ücretsiz plan).
 ```
 
+## Testler
+
+`qfe` paketinin temel kontrolleri birkaç saniyede çalışır. MD ya da uzun QM hesabı yapmazlar:
+
+```bash
+python -m pytest tests
+```
+
+Kontrol edilenler:
+- qubit Hamiltoniyeninin özdeğeri = PySCF CASCI
+- VQE tam çözüme ulaşıyor; QPE tepesi doğru enerjide; Trotter hatası adım sayısıyla azalıyor
+- Zwanzig/kümülant analitik sonuçla aynı; standart durum düzeltmesi doğru
+- havuz ya da QM ayarı değişince eski QM etiketleri yeniden kullanılmıyor
+
 ## Sorun giderme
 
 - **`CUDA` platformu görünmüyor:** WSL'de `nvidia-smi` çalışıyor mu? Ortamı `cuda-version` sürücünüzle uyumlu
@@ -153,6 +168,7 @@ H = SparsePauliOp.from_list([(lab, complex(re, im)) for lab, (re, im) in pl])
   tekrar çalıştırın.
 - **DFT yavaş:** `export OMP_NUM_THREADS=<çekirdek sayısı>` ayarlayın. `config.py` içinde `qm_cutoff_A`
   değerini (nokta yük kesmesi) küçültebilirsiniz.
+- **macOS'ta `No compatible OpenCL platform`:** Kod artık çalışmayan platformları atlayıp CPU'ya geçiyor.
 - **Bellek:** `standart` ön ayarındaki CAS(14,14) örtüşme taraması birkaç GB RAM isteyebilir.
 
 ## Kaynaklar

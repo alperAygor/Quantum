@@ -13,6 +13,15 @@ import openmm.app as app
 import openmm.unit as u
 
 from .config import DATA, SYSTEM, T_KELVIN, P
+from . import store
+
+DT_PS = 0.004  # integratör adımı (ps); HMR ile 4 fs
+
+
+def n_steps(ps):
+    """ps cinsinden süreyi adım sayısına çevirir. int(0.7/0.004) = 174 gibi kayan nokta
+    kesmelerine karşı yuvarlanır."""
+    return max(1, int(round(ps / DT_PS)))
 
 
 # ----------------------------------------------------------------------------
@@ -58,6 +67,17 @@ def download_inputs():
 # ----------------------------------------------------------------------------
 # Platform seçimi
 # ----------------------------------------------------------------------------
+def _platform_works(plat, props):
+    """Platform listede olsa da cihaz olmayabilir (ör. macOS'ta OpenCL). Küçük bir Context ile dener."""
+    s = mm.System()
+    s.addParticle(1.0)
+    try:
+        mm.Context(s, mm.VerletIntegrator(0.001), plat, props)
+        return True
+    except Exception:
+        return False
+
+
 def get_platform(verbose=True):
     names = [mm.Platform.getPlatform(i).getName() for i in range(mm.Platform.getNumPlatforms())]
     for pref in P()["platform_preference"]:
@@ -66,6 +86,8 @@ def get_platform(verbose=True):
             props = {}
             if pref in ("CUDA", "OpenCL"):
                 props = {"Precision": "mixed"}
+            if not _platform_works(plat, props):
+                continue
             if verbose:
                 print(f"OpenMM platformu: {pref}  (mevcut: {names})")
             return plat, props
@@ -120,6 +142,25 @@ def host_atoms(topology):
     return [a.index for a in topology.atoms() if a.residue.name == SYSTEM["host_resname"]]
 
 
+def build_system(leg, struct):
+    """Bacağın MM sistemi; kompleks bacağında konakçı-misafir kısıtı da eklenir."""
+    system = make_system(struct)
+    if leg == "complex":
+        add_flat_bottom_restraint(system, struct.topology)
+    return system
+
+
+def make_context(system, positions, box, verbose=False):
+    """Langevin integratörü + en uygun platformla Context kurar, kutu ve konumları yükler.
+    Dengeleme, FEP ve anlık görüntü havuzu aynı integratör ayarlarını buradan alır."""
+    integ = mm.LangevinMiddleIntegrator(T_KELVIN * u.kelvin, 1.0 / u.picosecond, DT_PS * u.picosecond)
+    plat, props = get_platform(verbose=verbose)
+    ctx = mm.Context(system, integ, plat, props)
+    ctx.setPeriodicBoxVectors(*box)
+    ctx.setPositions(positions)
+    return ctx, integ
+
+
 def make_system(struct, hmr=True):
     """PME, 9 Å kesme, H-bağ kısıtları, hidrojen kütle yeniden dağıtımı (4 fs adım)."""
     return struct.createSystem(
@@ -167,30 +208,28 @@ def restraint_standard_state_correction():
 
 
 def equilibrate(leg, ps=None, report=True):
-    """Kısa enerji minimizasyonu + NPT dengeleme. Dengelenmiş koordinatları kaydeder."""
+    """Kısa enerji minimizasyonu + NPT dengeleme. Dengelenmiş koordinatları
+    results/<ön_ayar>/ altına kaydeder (her ön ayarın kendi dengelemesi olur)."""
     ps = ps if ps is not None else P()["equil_npt_ps"]
     st0 = load_leg(leg)
-    system = make_system(st0)
-    if leg == "complex":
-        add_flat_bottom_restraint(system, st0.topology)
+    system = build_system(leg, st0)
     system.addForce(mm.MonteCarloBarostat(1.0 * u.bar, T_KELVIN * u.kelvin, 25))
-    integ = mm.LangevinMiddleIntegrator(T_KELVIN * u.kelvin, 1.0 / u.picosecond, 0.004 * u.picosecond)
-    plat, props = get_platform(verbose=report)
-    sim = app.Simulation(st0.topology, system, integ, plat, props)
-    sim.context.setPeriodicBoxVectors(*st0.box_vectors)
-    sim.context.setPositions(st0.positions)
-    sim.minimizeEnergy(maxIterations=500)
-    sim.context.setVelocitiesToTemperature(T_KELVIN * u.kelvin)
-    nsteps = int(ps / 0.004)
+    ctx, integ = make_context(system, st0.positions, st0.box_vectors, verbose=report)
+    mm.LocalEnergyMinimizer.minimize(ctx, 10.0, 500)
+    ctx.setVelocitiesToTemperature(T_KELVIN * u.kelvin)
+    nsteps = n_steps(ps)
     vols, t0 = [], time.time()
     chunk = max(1, nsteps // 20)
-    for _ in range(0, nsteps, chunk):
-        sim.step(chunk)
-        st = sim.context.getState()
+    done = 0
+    while done < nsteps:
+        k = min(chunk, nsteps - done)
+        integ.step(k)
+        done += k
+        st = ctx.getState()
         vols.append(st.getPeriodicBoxVolume().value_in_unit(u.nanometer ** 3))
     wall = time.time() - t0
-    st = sim.context.getState(getPositions=True)
-    np.savez(DATA / f"{leg}_equil.npz",
+    st = ctx.getState(getPositions=True)
+    np.savez(_equil_path(leg),
              positions=st.getPositions(asNumpy=True).value_in_unit(u.nanometer),
              box=st.getPeriodicBoxVectors(asNumpy=True).value_in_unit(u.nanometer))
     ns_day = (ps / 1000) / (wall / 86400) if wall > 0 else float("nan")
@@ -199,6 +238,13 @@ def equilibrate(leg, ps=None, report=True):
     return dict(volumes_nm3=vols, wall_s=wall, ns_per_day=ns_day)
 
 
+def _equil_path(leg):
+    return store.path(f"{leg}_equil.npz")
+
+
 def load_equilibrated(leg):
-    d = np.load(DATA / f"{leg}_equil.npz")
+    p = _equil_path(leg)
+    if not p.exists():
+        raise FileNotFoundError(f"{p} yok — bu ön ayar için 01. notebook'u (dengeleme) çalıştırdınız mı?")
+    d = np.load(p)
     return d["positions"], d["box"]

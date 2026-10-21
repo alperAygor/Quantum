@@ -29,9 +29,7 @@ def make_alchemical(leg):
     from openmmtools import alchemy
 
     st = mmsys.load_leg(leg)
-    system = mmsys.make_system(st)
-    if leg == "complex":
-        mmsys.add_flat_bottom_restraint(system, st.topology)
+    system = mmsys.build_system(leg, st)
     guest = mmsys.guest_atoms(st.topology)
     factory = alchemy.AbsoluteAlchemicalFactory(disable_alchemical_dispersion_correction=True)
     region = alchemy.AlchemicalRegion(alchemical_atoms=guest,
@@ -55,15 +53,11 @@ def run_leg(leg, progress=True):
     _, asys = make_alchemical(leg)
     pos, box = mmsys.load_equilibrated(leg)
     beta = 1.0 / KT
-    integ = mm.LangevinMiddleIntegrator(T_KELVIN * u.kelvin, 1.0 / u.picosecond, 0.004 * u.picosecond)
-    plat, props = mmsys.get_platform(verbose=progress)
-    ctx = mm.Context(asys, integ, plat, props)
-    ctx.setPeriodicBoxVectors(*box)
-    ctx.setPositions(pos)
+    ctx, integ = mmsys.make_context(asys, pos, box, verbose=progress)
 
-    steps_eq = int(p["fep_equil_ps"] / 0.004)
-    steps_sample = max(1, int(p["fep_sample_ps"] / 0.004))
-    n_samples = int(p["fep_prod_ps"] / p["fep_sample_ps"])
+    steps_eq = mmsys.n_steps(p["fep_equil_ps"])
+    steps_sample = mmsys.n_steps(p["fep_sample_ps"])
+    n_samples = int(round(p["fep_prod_ps"] / p["fep_sample_ps"]))
     u_kln = np.zeros((K, K, n_samples))
     t0 = time.time()
     for k, (le, ls) in enumerate(states):
@@ -135,19 +129,13 @@ def sample_endstate_pool(leg, n_frames=None, stride_ps=None, progress=True):
     n_frames = n_frames or p["pool_frames"]
     stride_ps = stride_ps or p["pool_stride_ps"]
     st = mmsys.load_leg(leg)
-    system = mmsys.make_system(st)
-    if leg == "complex":
-        mmsys.add_flat_bottom_restraint(system, st.topology)
+    system = mmsys.build_system(leg, st)
     pos, box = mmsys.load_equilibrated(leg)
-    integ = mm.LangevinMiddleIntegrator(T_KELVIN * u.kelvin, 1.0 / u.picosecond, 0.004 * u.picosecond)
-    plat, props = mmsys.get_platform(verbose=False)
-    ctx = mm.Context(system, integ, plat, props)
-    ctx.setPeriodicBoxVectors(*box)
-    ctx.setPositions(pos)
+    ctx, integ = mmsys.make_context(system, pos, box)
     mm.LocalEnergyMinimizer.minimize(ctx, 10.0, 200)
     ctx.setVelocitiesToTemperature(T_KELVIN * u.kelvin)
-    integ.step(int(10 / 0.004))
-    steps = max(1, int(stride_ps / 0.004))
+    integ.step(mmsys.n_steps(10))
+    steps = mmsys.n_steps(stride_ps)
     X = np.zeros((n_frames, system.getNumParticles(), 3), dtype=np.float32)
     B = np.zeros((n_frames, 3), dtype=np.float32)
     t0 = time.time()

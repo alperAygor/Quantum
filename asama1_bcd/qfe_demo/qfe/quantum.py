@@ -91,11 +91,17 @@ def vqe_uccsd(qop, n_qubits, n_elec, maxiter=200, shots=None, seed=0):
     hf = np.zeros(2 ** n_qubits, complex)
     hf[sum(1 << (n_qubits - 1 - q) for q in range(n_elec))] = 1.0
     npar = uccsd_singlet_paramsize(n_qubits, n_elec)
-    gen_cache = {}
+    # Üreteç parametrelere doğrusal: G(θ) = Σ θ_i G_i. Her G_i bir kez kurulur; her enerji
+    # ölçümünde Jordan-Wigner dönüşümünü yeniden yapmaya gerek kalmaz.
+    gens = []
+    for i in range(npar):
+        unit = np.zeros(npar)
+        unit[i] = 1.0
+        gens.append(get_sparse_operator(jordan_wigner(uccsd_singlet_generator(unit, n_qubits, n_elec)),
+                                        n_qubits=n_qubits).tocsr())
 
     def state(theta):
-        G = get_sparse_operator(jordan_wigner(uccsd_singlet_generator(theta, n_qubits, n_elec)),
-                                n_qubits=n_qubits)
+        G = sum(t * g for t, g in zip(theta, gens))
         return expm_multiply(G, hf)
 
     # Var(H) ~ atış gürültüsü ölçeği için

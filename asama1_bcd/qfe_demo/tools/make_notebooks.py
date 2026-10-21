@@ -583,11 +583,13 @@ Burada amacımız avantaj göstermek değil, **iş akışının nasıl kurulduğ
     code('''
 p = config.P()
 rng = np.random.default_rng(2)
+# ML2 yapıları havuzdan RASTGELE seçilir. ML1'in eğitim kümesi aktif öğrenmeyle seçilmiş uç yapılardan
+# oluştuğu için oradan seçmek ML2'yi havuzun tipik yapılarına göre yanlı yapar.
 ml2_set = []
 for leg in pools:
-    cand = [t for t in train1 if t[0] == leg]
-    sel = rng.choice(len(cand), size=min(len(cand), p["ml2_points"] // 2), replace=False)
-    ml2_set += [cand[j] for j in sel]
+    n = len(pools[leg][0])
+    sel = rng.choice(n, size=min(n, p["ml2_points"] // 2), replace=False)
+    ml2_set += [(leg, int(i)) for i in sel]
 with store.timed("05_yuksek_seviye_etiketler") as rec:
     delta = np.array([lab.high_minus_dft(l, i) for l, i in ml2_set])
     rec["n"] = len(ml2_set)
