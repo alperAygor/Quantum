@@ -1,278 +1,324 @@
-Proje_Arsivi/
-├── data/
-│   ├── raw/
-│   │   ├── ibm_sandbox_testi/
-│   │   │   ├── gonder.log
-│   │   │   ├── hazirla.log
-│   │   │   ├── porfin_ibm_hazir.json
-│   │   │   ├── porfin_ibm_sonuc_sahte.json
-│   │   │   └── sonuc.log
-│   │   ├── tddft_json/
-│   │   │   ├── klorin_tddft.json
-│   │   │   └── porfin_tddft.json
-│   │   ├── v3_json/
-│   │   │   ├── bakteriyoklorin_v3_sonuc.json
-│   │   │   ├── klorin_v3_sonuc.json
-│   │   │   ├── Mg-porfin_v3_sonuc.json
-│   │   │   ├── Pd-porfin_v3_sonuc.json
-│   │   │   ├── porfin_v3_sonuc.json
-│   │   │   ├── porfirazin_v3_sonuc.json
-│   │   │   ├── tetrametilporfin_v3_sonuc.json
-│   │   │   └── Zn-porfin_v3_sonuc.json
-│   │   ├── fragman_xtb_cikti.txt
-│   │   ├── md_konak_misafir_analiz.csv
-│   │   ├── pmf_profil.xvg
-│   │   ├── pmf_profil_tam.xvg
-│   │   ├── porfin_qm_log.txt
-│   │   ├── porfin_T1_log.txt
-│   │   ├── umbrella_histogramlari.xvg
-│   │   ├── umbrella_pencereler.txt
-│   │   └── vqe_4e4o_test.txt
-│   ├── bcd_sonuclar.csv
-│   ├── final_ozet.txt
-│   ├── final_tablo_F1F3.csv
-│   ├── ibm_donanim_porfin.csv
-│   ├── klinik_ilaclar.csv
-│   ├── literatur_kiyas.csv
-│   ├── porfin_uyarilmis_haller.csv
-│   ├── tddft_b3lyp.csv
-│   ├── v3_tarama_sonuclari.csv
-│   └── Veriler_ve_Kuresel_Muadil_Analizi.md
-├── docs/
-│   ├── 01_BCD_PMF_sonuc_ozeti.md
-│   ├── 02_PDT_porfin_kuantum.md
-│   ├── 03_Tarama_v3_sonuclar.md
-│   ├── 04_Literatur_karsilastirma_PDT_kuantum.md
-│   ├── 05_Basvuru_v4_durum.md
-│   ├── 06_IBM_donanim_plani.md
-│   ├── References.md
-│   └── Sunum_metni_ve_konusmaci_notlari.md
-├── molecules/
-│   ├── bcd_siklodekstrin/
-│   │   ├── bcd_345755.itp
-│   │   ├── beta_CD.gro
-│   │   ├── kompleks_baslangic.gro
-│   │   ├── md_yorunge_view.gro
-│   │   ├── misafir.gro
-│   │   ├── mod_A_bolge_glukoz.xyz
-│   │   ├── mod_A_temsilci_kare.xyz
-│   │   └── siklopentanol_aa.itp
-│   ├── orbitals/
-│   │   └── porfin_orbitaller.molden
-│   ├── pdb/
-│   │   ├── bakteriyoklorin.pdb
-│   │   ├── klorin.pdb
-│   │   ├── Mg-porfin.pdb
-│   │   ├── Pd-porfin.pdb
-│   │   ├── porfin.pdb
-│   │   ├── porfirazin.pdb
-│   │   ├── Protoporfirin-IX.pdb
-│   │   ├── Talaporfin.pdb
-│   │   ├── Temoporfin.pdb
-│   │   ├── tetrametilporfin.pdb
-│   │   └── Zn-porfin.pdb
-│   ├── sdf/
-│   │   ├── bakteriyoklorin.sdf
-│   │   ├── klorin.sdf
-│   │   ├── Mg-porfin.sdf
-│   │   ├── Pd-porfin.sdf
-│   │   ├── porfin.sdf
-│   │   ├── porfirazin.sdf
-│   │   ├── Protoporfirin-IX.sdf
-│   │   ├── siklopentanol_rdkit.sdf
-│   │   ├── Talaporfin.sdf
-│   │   ├── Temoporfin.sdf
-│   │   ├── tetrametilporfin.sdf
-│   │   └── Zn-porfin.sdf
-│   ├── xyz/
-│   │   ├── bakteriyoklorin.xyz
-│   │   ├── klorin.xyz
-│   │   ├── Mg-porfin.xyz
-│   │   ├── Pd-porfin.xyz
-│   │   ├── porfin.xyz
-│   │   ├── porfin_sandbox_xtb.xyz
-│   │   ├── porfirazin.xyz
-│   │   ├── Protoporfirin-IX.xyz
-│   │   ├── Talaporfin.xyz
-│   │   ├── Temoporfin.xyz
-│   │   ├── tetrametilporfin.xyz
-│   │   └── Zn-porfin.xyz
-│   └── SMILES_listesi.csv
-├── src/
-│   ├── 01_bcd_md_analiz/
-│   │   ├── analyze.py
-│   │   ├── chir.py
-│   │   ├── chir2.py
-│   │   ├── dG_hesapla.py
-│   │   ├── fig.py
-│   │   ├── flip_kontrol.py
-│   │   ├── hizala.py
-│   │   ├── ik.py
-│   │   ├── kare_sec.py
-│   │   ├── konak_misafir.py
-│   │   ├── pencere_sec.py
-│   │   ├── place2.py
-│   │   ├── plot_pmf.py
-│   │   ├── rim.py
-│   │   ├── shape.py
-│   │   └── temsilci_kare.py
-│   ├── 02_bcd_kuantum/
-│   │   ├── bolge_qm.py
-│   │   ├── bolge_vqe.py
-│   │   ├── fragman_xtb.py
-│   │   ├── vqe_misafir.py
-│   │   └── xtb_etkilesim.py
-│   ├── 03_porfin_kuantum/
-│   │   ├── ciz.py
-│   │   ├── molden_yaz.py
-│   │   ├── porfin_geo.py
-│   │   ├── porfin_qm.py
-│   │   ├── porfin_t1.py
-│   │   ├── t.py
-│   │   ├── t_dip.py
-│   │   └── t_td.py
-│   ├── 04_tarama_v3/
-│   │   ├── BENIOKU.txt
-│   │   ├── calistir.sh
-│   │   ├── geo.py
-│   │   ├── kurulum.sh
-│   │   ├── ozet.py
-│   │   └── tarama_qm.py
-│   ├── 05_gorsellestirme/
-│   │   ├── gercek_ilac.py
-│   │   ├── gi_test.py
-│   │   ├── gorsel.py
-│   │   ├── gorsel_hq.py
-│   │   ├── ilac_panel.py
-│   │   ├── merdiven.py
-│   │   ├── panel.py
-│   │   └── paneller.py
-│   ├── 06_referans_v4/
-│   │   ├── BENIOKU_v4.txt
-│   │   ├── calistir_v4.sh
-│   │   ├── cas_buyuk.py
-│   │   ├── final_figurler.py
-│   │   └── tddft_referans.py
-│   ├── 07_ibm_v5/
-│   │   ├── BENIOKU_v5.txt
-│   │   ├── hesap_kaydet.py
-│   │   └── ibm_vqe.py
-│   ├── 08_arsiv_araclari/
-│   │   └── build_archive.py
-│   ├── eski_surumler/
-│   │   ├── tarama_v1/
+kuantum-triyaj/
+├── araclar/
+│   └── build_archive.py
+├── asama1_bcd/
+│   ├── gromacs_vqe/
+│   │   ├── data/
+│   │   │   ├── raw/
+│   │   │   │   ├── fragman_xtb_cikti.txt
+│   │   │   │   ├── md_konak_misafir_analiz.csv
+│   │   │   │   ├── pmf_profil.xvg
+│   │   │   │   ├── pmf_profil_tam.xvg
+│   │   │   │   ├── umbrella_histogramlari.xvg
+│   │   │   │   ├── umbrella_pencereler.txt
+│   │   │   │   └── vqe_4e4o_test.txt
+│   │   │   └── bcd_sonuclar.csv
+│   │   ├── molecules/
+│   │   │   ├── bcd_siklodekstrin/
+│   │   │   │   ├── bcd_345755.itp
+│   │   │   │   ├── beta_CD.gro
+│   │   │   │   ├── kompleks_baslangic.gro
+│   │   │   │   ├── md_yorunge_view.gro
+│   │   │   │   ├── misafir.gro
+│   │   │   │   ├── mod_A_bolge_glukoz.xyz
+│   │   │   │   ├── mod_A_temsilci_kare.xyz
+│   │   │   │   └── siklopentanol_aa.itp
+│   │   │   └── sdf/
+│   │   │       └── siklopentanol_rdkit.sdf
+│   │   ├── src/
+│   │   │   ├── 01_bcd_md_analiz/
+│   │   │   │   ├── analyze.py
+│   │   │   │   ├── chir.py
+│   │   │   │   ├── chir2.py
+│   │   │   │   ├── dG_hesapla.py
+│   │   │   │   ├── fig.py
+│   │   │   │   ├── flip_kontrol.py
+│   │   │   │   ├── hizala.py
+│   │   │   │   ├── ik.py
+│   │   │   │   ├── kare_sec.py
+│   │   │   │   ├── konak_misafir.py
+│   │   │   │   ├── pencere_sec.py
+│   │   │   │   ├── place2.py
+│   │   │   │   ├── plot_pmf.py
+│   │   │   │   ├── rim.py
+│   │   │   │   ├── shape.py
+│   │   │   │   └── temsilci_kare.py
+│   │   │   └── 02_bcd_kuantum/
+│   │   │       ├── bolge_qm.py
+│   │   │       ├── bolge_vqe.py
+│   │   │       ├── fragman_xtb.py
+│   │   │       ├── vqe_misafir.py
+│   │   │       └── xtb_etkilesim.py
+│   │   └── visuals/
+│   │       └── fig01_PMF_bCD_siklopentanol.png
+│   ├── qfe_demo/
+│   │   ├── data/
+│   │   │   ├── README_cdset2.md
+│   │   │   ├── bcd-3-s.prmtop
+│   │   │   ├── bcd-3-s.rst7
+│   │   │   ├── guest-3.sdf
+│   │   │   └── host-bcd.pdb
+│   │   ├── notebooks/
+│   │   │   ├── 00_genel_bakis_ve_kurulum.ipynb
+│   │   │   ├── 01_veri_ve_sistem_hazirlama.ipynb
+│   │   │   ├── 02_MM_serbest_enerji_FEP.ipynb
+│   │   │   ├── 03_QM_bolgesi_ve_QMMM.ipynb
+│   │   │   ├── 04_ML1_aktif_ogrenme.ipynb
+│   │   │   ├── 05_kuantum_cekirdegi_ML2.ipynb
+│   │   │   ├── 06_kuantum_algoritmalari.ipynb
+│   │   │   └── 07_kaynak_tahmini_ve_yol_haritasi.ipynb
+│   │   ├── qfe/
+│   │   │   ├── __init__.py
+│   │   │   ├── config.py
+│   │   │   ├── fep.py
+│   │   │   ├── ml.py
+│   │   │   ├── mmsys.py
+│   │   │   ├── plotting.py
+│   │   │   ├── qmmm.py
+│   │   │   ├── quantum.py
+│   │   │   └── store.py
+│   │   ├── tools/
+│   │   │   ├── make_notebooks.py
+│   │   │   └── run_all.sh
+│   │   ├── README.md
+│   │   └── environment.yml
+│   └── README.md
+├── asama2_porfirin/
+│   ├── data/
+│   │   ├── raw/
+│   │   │   ├── tddft_json/
+│   │   │   │   ├── OKU_BENI.txt
+│   │   │   │   ├── klorin_tddft.json
+│   │   │   │   └── porfin_tddft.json
+│   │   │   ├── v3_json/
+│   │   │   │   ├── Mg-porfin_v3_sonuc.json
+│   │   │   │   ├── OKU_BENI.txt
+│   │   │   │   ├── Pd-porfin_v3_sonuc.json
+│   │   │   │   ├── Zn-porfin_v3_sonuc.json
+│   │   │   │   ├── bakteriyoklorin_v3_sonuc.json
+│   │   │   │   ├── klorin_v3_sonuc.json
+│   │   │   │   ├── porfin_v3_sonuc.json
+│   │   │   │   ├── porfirazin_v3_sonuc.json
+│   │   │   │   └── tetrametilporfin_v3_sonuc.json
+│   │   │   ├── porfin_T1_log.txt
+│   │   │   └── porfin_qm_log.txt
+│   │   ├── final_ozet.txt
+│   │   ├── final_tablo_F1F3.csv
+│   │   ├── ibm_donanim_porfin.csv
+│   │   ├── klinik_ilaclar.csv
+│   │   ├── literatur_kiyas.csv
+│   │   ├── porfin_uyarilmis_haller.csv
+│   │   ├── tddft_b3lyp.csv
+│   │   └── v3_tarama_sonuclari.csv
+│   ├── molecules/
+│   │   ├── orbitals/
+│   │   │   └── porfin_orbitaller.molden
+│   │   ├── pdb/
+│   │   │   ├── Mg-porfin.pdb
+│   │   │   ├── Pd-porfin.pdb
+│   │   │   ├── Protoporfirin-IX.pdb
+│   │   │   ├── Talaporfin.pdb
+│   │   │   ├── Temoporfin.pdb
+│   │   │   ├── Zn-porfin.pdb
+│   │   │   ├── bakteriyoklorin.pdb
+│   │   │   ├── klorin.pdb
+│   │   │   ├── porfin.pdb
+│   │   │   ├── porfirazin.pdb
+│   │   │   └── tetrametilporfin.pdb
+│   │   ├── sdf/
+│   │   │   ├── Mg-porfin.sdf
+│   │   │   ├── Pd-porfin.sdf
+│   │   │   ├── Protoporfirin-IX.sdf
+│   │   │   ├── Talaporfin.sdf
+│   │   │   ├── Temoporfin.sdf
+│   │   │   ├── Zn-porfin.sdf
+│   │   │   ├── bakteriyoklorin.sdf
+│   │   │   ├── klorin.sdf
+│   │   │   ├── porfin.sdf
+│   │   │   ├── porfirazin.sdf
+│   │   │   └── tetrametilporfin.sdf
+│   │   ├── xyz/
+│   │   │   ├── Mg-porfin.xyz
+│   │   │   ├── Pd-porfin.xyz
+│   │   │   ├── Protoporfirin-IX.xyz
+│   │   │   ├── Talaporfin.xyz
+│   │   │   ├── Temoporfin.xyz
+│   │   │   ├── Zn-porfin.xyz
+│   │   │   ├── bakteriyoklorin.xyz
+│   │   │   ├── klorin.xyz
+│   │   │   ├── porfin.xyz
+│   │   │   ├── porfin_sandbox_xtb.xyz
+│   │   │   ├── porfirazin.xyz
+│   │   │   └── tetrametilporfin.xyz
+│   │   └── SMILES_listesi.csv
+│   ├── src/
+│   │   ├── 03_porfin_kuantum/
+│   │   │   ├── ciz.py
+│   │   │   ├── molden_yaz.py
+│   │   │   ├── porfin_geo.py
+│   │   │   ├── porfin_qm.py
+│   │   │   ├── porfin_t1.py
+│   │   │   ├── t.py
+│   │   │   ├── t_dip.py
+│   │   │   └── t_td.py
+│   │   ├── 04_tarama_v3/
 │   │   │   ├── BENIOKU.txt
 │   │   │   ├── calistir.sh
 │   │   │   ├── geo.py
 │   │   │   ├── kurulum.sh
 │   │   │   ├── ozet.py
 │   │   │   └── tarama_qm.py
-│   │   └── tarama_v2/
-│   │       ├── BENIOKU.txt
-│   │       ├── calistir.sh
-│   │       ├── geo.py
-│   │       ├── kurulum.sh
-│   │       ├── ozet.py
-│   │       └── tarama_qm.py
-│   └── KAYIP_DOSYALAR.txt
-├── visuals/
-│   ├── chimerax/
-│   │   ├── fig21_molekul_porfin_uzaydolgu.png
-│   │   ├── fig22_molekul_porfin_topcubuk.png
-│   │   ├── fig23_molekul_porfin_HOMO.png
-│   │   ├── fig24_molekul_porfin_LUMO.png
-│   │   ├── fig25_molekul_porfin_S1_S0_fark_yogunlugu.png
-│   │   ├── fig26_molekul_Zn-porfin_uzaydolgu.png
-│   │   ├── fig27_molekul_Zn-porfin_topcubuk.png
-│   │   ├── fig28_molekul_Zn-porfin_HOMO.png
-│   │   ├── fig29_molekul_Zn-porfin_LUMO.png
-│   │   ├── fig30_molekul_Zn-porfin_S1_S0_fark_yogunlugu.png
-│   │   ├── fig31_molekul_Mg-porfin_uzaydolgu.png
-│   │   ├── fig32_molekul_Mg-porfin_topcubuk.png
-│   │   ├── fig33_molekul_Mg-porfin_HOMO.png
-│   │   ├── fig34_molekul_Mg-porfin_LUMO.png
-│   │   ├── fig35_molekul_Mg-porfin_S1_S0_fark_yogunlugu.png
-│   │   ├── fig36_molekul_Pd-porfin_uzaydolgu.png
-│   │   ├── fig37_molekul_Pd-porfin_topcubuk.png
-│   │   ├── fig38_molekul_Pd-porfin_HOMO.png
-│   │   ├── fig39_molekul_Pd-porfin_LUMO.png
-│   │   ├── fig40_molekul_Pd-porfin_S1_S0_fark_yogunlugu.png
-│   │   ├── fig41_molekul_tetrametilporfin_uzaydolgu.png
-│   │   ├── fig42_molekul_tetrametilporfin_topcubuk.png
-│   │   ├── fig43_molekul_tetrametilporfin_HOMO.png
-│   │   ├── fig44_molekul_tetrametilporfin_LUMO.png
-│   │   ├── fig45_molekul_tetrametilporfin_S1_S0_fark_yogunlugu.png
-│   │   ├── fig46_molekul_klorin_uzaydolgu.png
-│   │   ├── fig47_molekul_klorin_topcubuk.png
-│   │   ├── fig48_molekul_klorin_HOMO.png
-│   │   ├── fig49_molekul_klorin_LUMO.png
-│   │   ├── fig50_molekul_klorin_S1_S0_fark_yogunlugu.png
-│   │   ├── fig51_molekul_porfirazin_uzaydolgu.png
-│   │   ├── fig52_molekul_porfirazin_topcubuk.png
-│   │   ├── fig53_molekul_porfirazin_HOMO.png
-│   │   ├── fig54_molekul_porfirazin_LUMO.png
-│   │   ├── fig55_molekul_porfirazin_S1_S0_fark_yogunlugu.png
-│   │   ├── fig56_molekul_bakteriyoklorin_uzaydolgu.png
-│   │   ├── fig57_molekul_bakteriyoklorin_topcubuk.png
-│   │   ├── fig58_molekul_bakteriyoklorin_HOMO.png
-│   │   ├── fig59_molekul_bakteriyoklorin_LUMO.png
-│   │   ├── fig60_molekul_bakteriyoklorin_S1_S0_fark_yogunlugu.png
-│   │   ├── fig61_ilac_Temoporfin_uzaydolgu.png
-│   │   ├── fig62_ilac_Temoporfin_HOMO_kuantum_bolgesi.png
-│   │   ├── fig63_ilac_Temoporfin_LUMO_kuantum_bolgesi.png
-│   │   ├── fig64_ilac_Talaporfin_uzaydolgu.png
-│   │   ├── fig65_ilac_Talaporfin_HOMO_kuantum_bolgesi.png
-│   │   ├── fig66_ilac_Talaporfin_LUMO_kuantum_bolgesi.png
-│   │   ├── fig67_ilac_Protoporfirin-IX_uzaydolgu.png
-│   │   ├── fig68_ilac_Protoporfirin-IX_HOMO_kuantum_bolgesi.png
-│   │   └── fig69_ilac_Protoporfirin-IX_LUMO_kuantum_bolgesi.png
-│   ├── chimerax_betikleri/
-│   │   ├── hepsi.cxc
-│   │   ├── ilaclar_hepsi.cxc
-│   │   ├── klorin__Talaporfin_HOMO.cxc
-│   │   ├── klorin__Talaporfin_LUMO.cxc
-│   │   ├── klorin__Talaporfin_molekul.cxc
-│   │   ├── klorin__Temoporfin_HOMO.cxc
-│   │   ├── klorin__Temoporfin_LUMO.cxc
-│   │   ├── klorin__Temoporfin_molekul.cxc
-│   │   ├── molekul_hepsi.cxc
-│   │   ├── porfin__porfin_fark.cxc
-│   │   ├── porfin__porfin_HOMO.cxc
-│   │   ├── porfin__porfin_LUMO.cxc
-│   │   ├── porfin__porfin_video.cxc
-│   │   ├── porfin__Protoporfirin-IX_HOMO.cxc
-│   │   ├── porfin__Protoporfirin-IX_LUMO.cxc
-│   │   └── porfin__Protoporfirin-IX_molekul.cxc
-│   ├── grafikler/
-│   │   ├── fig01_PMF_bCD_siklopentanol.png
-│   │   ├── fig02_porfin_gouterman_orbitaller.png
-│   │   ├── fig03_porfin_orbital_secimi.png
-│   │   ├── fig04_tarama_v3_sonuclari.png
-│   │   ├── fig05_porfin_panel_2_3.png
-│   │   ├── fig06_F1_yontem_karsilastirma.png
-│   │   ├── fig07_F2_triyaj_dogrulama.png
-│   │   ├── fig08_F3_klinik_ilaclar.png
-│   │   ├── fig09_ibm_kingston_donanim.png
-│   │   ├── fig10_panel_Bakteriyoklorin_panel_2_3.png
-│   │   ├── fig11_panel_ILAC_Protoporfirin_IX_panel.png
-│   │   ├── fig12_panel_ILAC_Talaporfin_panel.png
-│   │   ├── fig13_panel_ILAC_Temoporfin_panel.png
-│   │   ├── fig14_panel_Klorin_panel_2_3.png
-│   │   ├── fig15_panel_Mg-porfin_panel_2_3.png
-│   │   ├── fig16_panel_Pd-porfin_panel_2_3.png
-│   │   ├── fig17_panel_Porfin_panel_2_3.png
-│   │   ├── fig18_panel_Porfirazin_panel_2_3.png
-│   │   ├── fig19_panel_Tetrametilporfin_panel_2_3.png
-│   │   └── fig20_panel_Zn-porfin_panel_2_3.png
-│   ├── sunum_kirpilmis/
-│   │   ├── porfin_fark.jpg
-│   │   ├── porfin_HOMO.jpg
-│   │   ├── porfin_LUMO.jpg
-│   │   ├── porfin_molekul.jpg
-│   │   ├── ProtoporfirinIX_HOMO.jpg
-│   │   ├── ProtoporfirinIX_molekul.jpg
-│   │   ├── Talaporfin_molekul.jpg
-│   │   ├── Temoporfin_HOMO.jpg
-│   │   └── Temoporfin_molekul.jpg
-│   └── Gorsel_Envanteri_ve_Rehberi.md
+│   │   ├── 05_gorsellestirme/
+│   │   │   ├── gercek_ilac.py
+│   │   │   ├── gi_test.py
+│   │   │   ├── gorsel.py
+│   │   │   ├── gorsel_hq.py
+│   │   │   ├── ilac_panel.py
+│   │   │   ├── merdiven.py
+│   │   │   ├── panel.py
+│   │   │   └── paneller.py
+│   │   ├── 06_referans_v4/
+│   │   │   ├── BENIOKU_v4.txt
+│   │   │   ├── calistir_v4.sh
+│   │   │   ├── cas_buyuk.py
+│   │   │   ├── final_figurler.py
+│   │   │   └── tddft_referans.py
+│   │   ├── eski_surumler/
+│   │   │   ├── tarama_v1/
+│   │   │   │   ├── BENIOKU.txt
+│   │   │   │   ├── calistir.sh
+│   │   │   │   ├── geo.py
+│   │   │   │   ├── kurulum.sh
+│   │   │   │   ├── ozet.py
+│   │   │   │   └── tarama_qm.py
+│   │   │   └── tarama_v2/
+│   │   │       ├── BENIOKU.txt
+│   │   │       ├── calistir.sh
+│   │   │       ├── geo.py
+│   │   │       ├── kurulum.sh
+│   │   │       ├── ozet.py
+│   │   │       └── tarama_qm.py
+│   │   └── KAYIP_DOSYALAR.txt
+│   └── visuals/
+│       ├── chimerax/
+│       │   ├── fig21_molekul_porfin_uzaydolgu.png
+│       │   ├── fig22_molekul_porfin_topcubuk.png
+│       │   ├── fig23_molekul_porfin_HOMO.png
+│       │   ├── fig24_molekul_porfin_LUMO.png
+│       │   ├── fig25_molekul_porfin_S1_S0_fark_yogunlugu.png
+│       │   ├── fig26_molekul_Zn-porfin_uzaydolgu.png
+│       │   ├── fig27_molekul_Zn-porfin_topcubuk.png
+│       │   ├── fig28_molekul_Zn-porfin_HOMO.png
+│       │   ├── fig29_molekul_Zn-porfin_LUMO.png
+│       │   ├── fig30_molekul_Zn-porfin_S1_S0_fark_yogunlugu.png
+│       │   ├── fig31_molekul_Mg-porfin_uzaydolgu.png
+│       │   ├── fig32_molekul_Mg-porfin_topcubuk.png
+│       │   ├── fig33_molekul_Mg-porfin_HOMO.png
+│       │   ├── fig34_molekul_Mg-porfin_LUMO.png
+│       │   ├── fig35_molekul_Mg-porfin_S1_S0_fark_yogunlugu.png
+│       │   ├── fig36_molekul_Pd-porfin_uzaydolgu.png
+│       │   ├── fig37_molekul_Pd-porfin_topcubuk.png
+│       │   ├── fig38_molekul_Pd-porfin_HOMO.png
+│       │   ├── fig39_molekul_Pd-porfin_LUMO.png
+│       │   ├── fig40_molekul_Pd-porfin_S1_S0_fark_yogunlugu.png
+│       │   ├── fig41_molekul_tetrametilporfin_uzaydolgu.png
+│       │   ├── fig42_molekul_tetrametilporfin_topcubuk.png
+│       │   ├── fig43_molekul_tetrametilporfin_HOMO.png
+│       │   ├── fig44_molekul_tetrametilporfin_LUMO.png
+│       │   ├── fig45_molekul_tetrametilporfin_S1_S0_fark_yogunlugu.png
+│       │   ├── fig46_molekul_klorin_uzaydolgu.png
+│       │   ├── fig47_molekul_klorin_topcubuk.png
+│       │   ├── fig48_molekul_klorin_HOMO.png
+│       │   ├── fig49_molekul_klorin_LUMO.png
+│       │   ├── fig50_molekul_klorin_S1_S0_fark_yogunlugu.png
+│       │   ├── fig51_molekul_porfirazin_uzaydolgu.png
+│       │   ├── fig52_molekul_porfirazin_topcubuk.png
+│       │   ├── fig53_molekul_porfirazin_HOMO.png
+│       │   ├── fig54_molekul_porfirazin_LUMO.png
+│       │   ├── fig55_molekul_porfirazin_S1_S0_fark_yogunlugu.png
+│       │   ├── fig56_molekul_bakteriyoklorin_uzaydolgu.png
+│       │   ├── fig57_molekul_bakteriyoklorin_topcubuk.png
+│       │   ├── fig58_molekul_bakteriyoklorin_HOMO.png
+│       │   ├── fig59_molekul_bakteriyoklorin_LUMO.png
+│       │   ├── fig60_molekul_bakteriyoklorin_S1_S0_fark_yogunlugu.png
+│       │   ├── fig61_ilac_Temoporfin_uzaydolgu.png
+│       │   ├── fig62_ilac_Temoporfin_HOMO_kuantum_bolgesi.png
+│       │   ├── fig63_ilac_Temoporfin_LUMO_kuantum_bolgesi.png
+│       │   ├── fig64_ilac_Talaporfin_uzaydolgu.png
+│       │   ├── fig65_ilac_Talaporfin_HOMO_kuantum_bolgesi.png
+│       │   ├── fig66_ilac_Talaporfin_LUMO_kuantum_bolgesi.png
+│       │   ├── fig67_ilac_Protoporfirin-IX_uzaydolgu.png
+│       │   ├── fig68_ilac_Protoporfirin-IX_HOMO_kuantum_bolgesi.png
+│       │   └── fig69_ilac_Protoporfirin-IX_LUMO_kuantum_bolgesi.png
+│       ├── chimerax_betikleri/
+│       │   ├── hepsi.cxc
+│       │   ├── ilaclar_hepsi.cxc
+│       │   ├── klorin__Talaporfin_HOMO.cxc
+│       │   ├── klorin__Talaporfin_LUMO.cxc
+│       │   ├── klorin__Talaporfin_molekul.cxc
+│       │   ├── klorin__Temoporfin_HOMO.cxc
+│       │   ├── klorin__Temoporfin_LUMO.cxc
+│       │   ├── klorin__Temoporfin_molekul.cxc
+│       │   ├── molekul_hepsi.cxc
+│       │   ├── porfin__Protoporfirin-IX_HOMO.cxc
+│       │   ├── porfin__Protoporfirin-IX_LUMO.cxc
+│       │   ├── porfin__Protoporfirin-IX_molekul.cxc
+│       │   ├── porfin__porfin_HOMO.cxc
+│       │   ├── porfin__porfin_LUMO.cxc
+│       │   ├── porfin__porfin_fark.cxc
+│       │   └── porfin__porfin_video.cxc
+│       ├── grafikler/
+│       │   ├── fig02_porfin_gouterman_orbitaller.png
+│       │   ├── fig03_porfin_orbital_secimi.png
+│       │   ├── fig04_tarama_v3_sonuclari.png
+│       │   ├── fig05_porfin_panel_2_3.png
+│       │   ├── fig06_F1_yontem_karsilastirma.png
+│       │   ├── fig07_F2_triyaj_dogrulama.png
+│       │   ├── fig08_F3_klinik_ilaclar.png
+│       │   ├── fig09_ibm_kingston_donanim.png
+│       │   ├── fig10_panel_Bakteriyoklorin_panel_2_3.png
+│       │   ├── fig11_panel_ILAC_Protoporfirin_IX_panel.png
+│       │   ├── fig12_panel_ILAC_Talaporfin_panel.png
+│       │   ├── fig13_panel_ILAC_Temoporfin_panel.png
+│       │   ├── fig14_panel_Klorin_panel_2_3.png
+│       │   ├── fig15_panel_Mg-porfin_panel_2_3.png
+│       │   ├── fig16_panel_Pd-porfin_panel_2_3.png
+│       │   ├── fig17_panel_Porfin_panel_2_3.png
+│       │   ├── fig18_panel_Porfirazin_panel_2_3.png
+│       │   ├── fig19_panel_Tetrametilporfin_panel_2_3.png
+│       │   └── fig20_panel_Zn-porfin_panel_2_3.png
+│       ├── sunum_kirpilmis/
+│       │   ├── ProtoporfirinIX_HOMO.jpg
+│       │   ├── ProtoporfirinIX_molekul.jpg
+│       │   ├── Talaporfin_molekul.jpg
+│       │   ├── Temoporfin_HOMO.jpg
+│       │   ├── Temoporfin_molekul.jpg
+│       │   ├── porfin_HOMO.jpg
+│       │   ├── porfin_LUMO.jpg
+│       │   ├── porfin_fark.jpg
+│       │   └── porfin_molekul.jpg
+│       └── Gorsel_Envanteri_ve_Rehberi.md
+├── docs/
+│   ├── 00_Master_Teknik_Rapor.md
+│   ├── 01_BCD_PMF_sonuc_ozeti.md
+│   ├── 02_PDT_porfin_kuantum.md
+│   ├── 03_Tarama_v3_sonuclar.md
+│   ├── 04_Literatur_karsilastirma_PDT_kuantum.md
+│   ├── 05_Basvuru_v4_durum.md
+│   ├── 06_IBM_donanim_plani.md
+│   ├── Dizin_Agaci.txt
+│   ├── References.md
+│   ├── Sunum_metni_ve_konusmaci_notlari.md
+│   └── Veriler_ve_Kuresel_Muadil_Analizi.md
+├── ibm/
+│   ├── sandbox_testi/
+│   │   ├── gonder.log
+│   │   ├── hazirla.log
+│   │   ├── porfin_ibm_hazir.json
+│   │   ├── porfin_ibm_sonuc_sahte.json
+│   │   └── sonuc.log
+│   ├── BENIOKU_v5.txt
+│   ├── hesap_kaydet.py
+│   └── ibm_vqe.py
+├── .gitignore
 └── README.md

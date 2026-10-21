@@ -1,12 +1,12 @@
 # Elde Edilen Veriler ve Küresel Muadil Analizi
 
-Tüm sayılar bu projede hesaplanmıştır; dış kaynaklardan gelen sayılar ayrıca belirtilmiştir. Enerjiler eV, bağlanma enerjileri kcal/mol cinsindendir. CSV karşılıkları `data/` klasöründedir.
+Tüm sayılar bu projede hesaplanmıştır; dış kaynaklardan gelen sayılar ayrıca belirtilmiştir. Enerjiler eV, bağlanma enerjileri kcal/mol cinsindendir. CSV karşılıkları `asama1_bcd/gromacs_vqe/data/` (β-CD) ve `asama2_porfirin/data/` (porfirinler) klasörlerindedir.
 
 ---
 
 ## A. β-siklodekstrin + siklopentanol (konak–misafir)
 
-### A1. Serbest enerji ve bağlanma modları (`data/bcd_sonuclar.csv`)
+### A1. Serbest enerji ve bağlanma modları (`asama1_bcd/gromacs_vqe/data/bcd_sonuclar.csv`)
 | Büyüklük | Değer | Yorum |
 |---|---|---|
 | ΔG°(PMF, WHAM) | −2,7 ± 0,6 kcal/mol | Deneyle (−3,05) 0,33 kcal/mol fark. Literatürdeki RMSE aralığının (0,9–1,8) içinde. |
@@ -72,7 +72,7 @@ Tüm sayılar bu projede hesaplanmıştır; dış kaynaklardan gelen sayılar ay
 
 ---
 
-## C. 8 porfirin türevi: tarama v3 (`data/v3_tarama_sonuclari.csv`)
+## C. 8 porfirin türevi: tarama v3 (`asama2_porfirin/data/v3_tarama_sonuclari.csv`)
 
 Yöntem: B3LYP/def2-SVP orbitalleri + CAS(4,4) = 8 kübit VQD + SC-NEVPT2; geometri GFN2-xTB.
 
@@ -107,7 +107,7 @@ Yöntem: B3LYP/def2-SVP orbitalleri + CAS(4,4) = 8 kübit VQD + SC-NEVPT2; geome
 
 ---
 
-## D. Klasik referans: TD-DFT B3LYP/def2-SVP (`data/tddft_b3lyp.csv`)
+## D. Klasik referans: TD-DFT B3LYP/def2-SVP (`asama2_porfirin/data/tddft_b3lyp.csv`)
 
 | Molekül | TD-DFT S1 | f | TDA T1 | Deney S1 | TD-DFT farkı | Bizim fark |
 |---|---|---|---|---|---|---|
@@ -122,7 +122,7 @@ Yöntem: B3LYP/def2-SVP orbitalleri + CAS(4,4) = 8 kübit VQD + SC-NEVPT2; geome
 
 ---
 
-## E. Klinik ilaçlar: çekirdek hesabı ve klinik ışık (`data/klinik_ilaclar.csv`)
+## E. Klinik ilaçlar: çekirdek hesabı ve klinik ışık (`asama2_porfirin/data/klinik_ilaclar.csv`)
 
 | İlaç | Çekirdek | Klinik ışık | Bizim çekirdek S1 | Fark | TD-DFT çekirdek | Fark | Hizalama RMSD | Triyaj |
 |---|---|---|---|---|---|---|---|---|
@@ -138,7 +138,7 @@ Yöntem: B3LYP/def2-SVP orbitalleri + CAS(4,4) = 8 kübit VQD + SC-NEVPT2; geome
 
 ---
 
-## F. Gerçek kuantum donanımı: IBM ibm_kingston (`data/ibm_donanim_porfin.csv`)
+## F. Gerçek kuantum donanımı: IBM ibm_kingston (`asama2_porfirin/data/ibm_donanim_porfin.csv`)
 
 | Hesap | S1 (eV) | Tam çözümden fark |
 |---|---|---|

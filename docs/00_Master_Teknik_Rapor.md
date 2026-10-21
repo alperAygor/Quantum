@@ -39,7 +39,7 @@ Triyaj kuralı: Kuantum bölgesinde S1 uyarılmış halinde **ikinci elektron ko
 
 - **Kuantum avantajı iddia edilmiyor.** 8 kübitlik hesap klasik bilgisayarda da tam çözülüyor; TD-DFT'ye karşı doğruluk üstünlüğü çok-konfigürasyonlu yaklaşımdan (CAS \+ NEVPT2) geliyor, NEVPT2 de klasik bir yöntem.  
 - **İlacın tamamı hesaplanmadı.** Yalnızca fotoaktif çekirdek hesaplandı; yan gruplar ve çözücü yok.  
-- **NIR bölgesi zayıf nokta.** Bakteriyoklorinde (padeliporfin/Tookad çekirdeği) 4 orbitalli model 0,49 eV hata veriyor; CAS(8,8) \= 16 kübit gerekli (betik hazır: `src/06_referans_v4/cas_buyuk.py`).  
+- **NIR bölgesi zayıf nokta.** Bakteriyoklorinde (padeliporfin/Tookad çekirdeği) 4 orbitalli model 0,49 eV hata veriyor; CAS(8,8) \= 16 kübit gerekli (betik hazır: `asama2_porfirin/src/06_referans_v4/cas_buyuk.py`).  
 - **T1 (triplet) güvenilir değil.** ΔSCF porfinde 2,00 eV (deney 1,58); TDA-B3LYP 1,83 eV ile daha iyi.  
 - **Gerçek donanımda gürültü baskın.** Sinyalin yalnızca %41–53'ü korunuyor.
 
@@ -49,17 +49,17 @@ Triyaj kuralı: Kuantum bölgesinde S1 uyarılmış halinde **ikinci elektron ko
 
 | Aşama | İçerik | Ana dosyalar |
 | :---- | :---- | :---- |
-| A | β-CD \+ siklopentanol: topoloji (ATB), 10 ns MD, 37 pencereli umbrella sampling, WHAM | `src/01_bcd_md_analiz/`, `data/raw/` |
-| B | Bağlanma modları (901 kare), temsilci kareler | `temsilci_kare.py`, `molecules/bcd/` |
-| C | Kuantum doğrulama: misafir VQE (8 kübit) \= CASCI | `src/02_bcd_kuantum/vqe_misafir.py` |
+| A | β-CD \+ siklopentanol: topoloji (ATB), 10 ns MD, 37 pencereli umbrella sampling, WHAM | `asama1_bcd/gromacs_vqe/src/01_bcd_md_analiz/`, `asama1_bcd/gromacs_vqe/data/raw/` |
+| B | Bağlanma modları (901 kare), temsilci kareler | `asama1_bcd/gromacs_vqe/src/01_bcd_md_analiz/temsilci_kare.py`, `asama1_bcd/gromacs_vqe/molecules/bcd_siklodekstrin/` |
+| C | Kuantum doğrulama: misafir VQE (8 kübit) \= CASCI | `asama1_bcd/gromacs_vqe/src/02_bcd_kuantum/vqe_misafir.py` |
 | D | GFN2-xTB tam kompleks etkileşim, D4 dispersiyon | `xtb_etkilesim.py` |
 | E | MFCC parçalama, bölgede HF/MP2/B3LYP-D3, bölge VQE \+ hibrit | `fragman_xtb.py`, `bolge_qm.py`, `bolge_vqe.py` |
-| F | Porfin: Gouterman CAS(4,4) VQD \+ NEVPT2, literatür doğrulaması | `src/03_porfin_kuantum/` |
-| G | 8 porfirin taraması (v1 → v2 → v3; v3 nihai) | `src/04_tarama_v3/` |
-| H | Görselleştirme: cube/molden → ChimeraX; gerçek ilaçların hizalanması | `src/05_gorsellestirme/` |
+| F | Porfin: Gouterman CAS(4,4) VQD \+ NEVPT2, literatür doğrulaması | `asama2_porfirin/src/03_porfin_kuantum/` |
+| G | 8 porfirin taraması (v1 → v2 → v3; v3 nihai) | `asama2_porfirin/src/04_tarama_v3/` |
+| H | Görselleştirme: cube/molden → ChimeraX; gerçek ilaçların hizalanması | `asama2_porfirin/src/05_gorsellestirme/` |
 | I | Literatür (Xanadu, Algorithmiq) ve klinik dalga boylarının doğrulanması | `docs/` |
-| J | Klasik referans: TD-DFT B3LYP; büyük aktif uzay betiği | `src/06_referans_v4/` |
-| K | IBM Quantum: kompakt ADAPT devresi, ibm\_kingston'da ölçüm | `src/07_ibm_v5/` |
+| J | Klasik referans: TD-DFT B3LYP; büyük aktif uzay betiği | `asama2_porfirin/src/06_referans_v4/` |
+| K | IBM Quantum: kompakt ADAPT devresi, ibm\_kingston'da ölçüm | `ibm/` |
 | L | YTÜ Startup House sunumu (17 slayt) | `docs/Sunum_metni_ve_konusmaci_notlari.md` |
 
 &nbsp;
@@ -161,7 +161,7 @@ mkdir -p ~/pyscf_tmp && echo 'export PYSCF_TMPDIR=~/pyscf_tmp' >> ~/.bashrc
    - Jenerik çekirdek SMARTS'ı ile alt yapı eşleşmesi yapılır.  
    - İlaç, Kabsch hizalamasıyla bizim xTB çekirdeğimizin üzerine oturtulur.  
    - Sonuç PDB \+ CONECT olarak yazılır, ChimeraX betikleri üretilir.  
-4. Ayrıntılı parametreler ve tüm şekil açıklamaları: `visuals/Gorsel_Envanteri_ve_Rehberi.md`.
+4. Ayrıntılı parametreler ve tüm şekil açıklamaları: `asama2_porfirin/visuals/Gorsel_Envanteri_ve_Rehberi.md`.
 
 ---
 
@@ -184,7 +184,7 @@ mkdir -p ~/pyscf_tmp && echo 'export PYSCF_TMPDIR=~/pyscf_tmp' >> ~/.bashrc
 
 ### 5.2 Porfirin taraması (v3)
 
-Tam tablo için bkz. `data/v3_tarama_sonuclari.csv` ve `data/Veriler_ve_Kuresel_Muadil_Analizi.md`. Özet:
+Tam tablo için bkz. `asama2_porfirin/data/v3_tarama_sonuclari.csv` ve `docs/Veriler_ve_Kuresel_Muadil_Analizi.md`. Özet:
 
 - 5 doğrudan deneyli molekülde S1 ortalama mutlak hatası (MAE) **0,111 eV**; 7 molekülde 0,184 eV.  
 - Triyaj:  
@@ -207,6 +207,8 @@ Tam tablo için bkz. `data/v3_tarama_sonuclari.csv` ve `data/Veriler_ve_Kuresel_
 ---
 
 ## 6\. Nasıl yeniden üretilir
+
+Betikler hesap sırasında kullanıcının bilgisayarında tek bir düz klasörde (`~/tarama`) çalıştırıldı. Depodaki yerleri: `geo.py`, `tarama_qm.py`, `ozet.py`, `calistir.sh` → `asama2_porfirin/src/04_tarama_v3/`; `gorsel_hq.py`, `gercek_ilac.py` → `asama2_porfirin/src/05_gorsellestirme/`; `calistir_v4.sh`, `final_figurler.py`, `cas_buyuk.py` → `asama2_porfirin/src/06_referans_v4/`; `hesap_kaydet.py`, `ibm_vqe.py` → `ibm/`. Aşağıdaki komutlar için bu dosyaları aynı klasöre kopyalayın.
 
 ```sh
 source ~/qenv/bin/activate && cd ~/tarama
@@ -235,11 +237,16 @@ python3 ibm_vqe.py sonuc porfin
 
 | Klasör | İçerik |
 | :---- | :---- |
-| `docs/` | Kaynakça, aşama özetleri, literatür karşılaştırması, IBM planı, sunum metni |
-| `data/` | Tüm sayısal sonuçlar (CSV), veri yorumu ve küresel muadil analizi, ham çıktılar |
-| `molecules/` | SMILES listesi, PDB (xTB geometrileri \+ hizalanmış ilaçlar), XYZ, SDF, molden, β-CD topolojileri |
-| `visuals/` | Grafikler (yeniden çizilmiş), ChimeraX görselleri (standart adlarla), .cxc betikleri, görsel envanteri |
-| `src/` | Tüm betikler, aşamalara göre numaralı klasörlerde, kısaltılmadan |
+> Arşiv, 21 Ekim 2026'da `kuantum-triyaj` deposunda aşamalara göre yeniden düzenlendi. Güncel yapı için depo kökündeki `README.md` dosyasına bakın.
+
+| Klasör | İçerik |
+| :---- | :---- |
+| `docs/` | Bu rapor, kaynakça, aşama özetleri, veri yorumu ve küresel muadil analizi, literatür karşılaştırması, IBM planı, sunum metni |
+| `asama1_bcd/gromacs_vqe/` | β-CD \+ siklopentanol: betikler (`src/01`, `src/02`), sonuçlar ve ham çıktılar, β-CD topolojileri, PMF grafiği |
+| `asama1_bcd/qfe_demo/` | Aynı sistem için FreeQuantum pipeline'ının eğitim simülasyonu (OpenMM FEP → QM/MM → ML → VQE/QPE) |
+| `asama2_porfirin/` | Porfirin/PDT: betikler (`src/03`–`src/06`, eski sürümler), CSV ve ham JSON'lar, PDB/XYZ/SDF/molden, grafikler ve ChimeraX görselleri |
+| `ibm/` | IBM Quantum betikleri (`hesap_kaydet.py`, `ibm_vqe.py`) ve sandbox test çıktıları |
+| `araclar/` | Arşivi ilk kez oluşturan betik (`build_archive.py`; yolları orijinal ortama göre) |
 
 &nbsp;
 

@@ -22,6 +22,7 @@ Görsellerin üst ve alt kenarlarındaki etiketler `2dlabels` komutuyla eklendi.
 ## A. Python/matplotlib grafikleri (`visuals/grafikler/`)
 
 ### `fig01_PMF_bCD_siklopentanol.png`
+- **Konum:** β-CD aşamasına ait olduğu için `asama1_bcd/gromacs_vqe/visuals/` klasörüne taşındı.
 - **(a) Ne gösteriyor:** β-CD + siklopentanol için ortalama kuvvet potansiyeli (PMF) W(ξ). Alt panelde 37 şemsiye penceresinin histogramları (örtüşme kontrolü). Bağlı durum ξ ≈ −0,05 nm'de −17,7 kJ/mol.
 - **(b) Araç/parametre:** GROMACS 2026.1 `gmx wham` (-b 200) → `plot_pmf.py` (matplotlib). Mavi #2a78d6 çizgi, kesikli çizgiler su platoları.
 - **(c) Şekil açıklaması:** Şekil 1. β-siklodekstrin–siklopentanol kompleksinin CD ekseni boyunca ortalama kuvvet potansiyeli (37 pencere × 2 ns, 300 K, WHAM). Hesaplanan ΔG° = −2,7 ± 0,6 kcal/mol; deney −3,05 kcal/mol.
