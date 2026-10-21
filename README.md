@@ -51,8 +51,12 @@ kuantum-triyaj/
 - Bazı dosyalar arşive hiç alınamadı: GROMACS `.mdp` dosyaları, yörüngeler, `misafir_qm.py` ve bazı JSON'lar.
   Listesi [`asama2_porfirin/src/KAYIP_DOSYALAR.txt`](asama2_porfirin/src/KAYIP_DOSYALAR.txt) dosyasında.
 - TD-DFT referansının tetrametilporfin ve Pd-porfin hesapları tamamlanmadı.
-- Betikler orijinal ortamda (`~/tarama`, WSL2) düz bir klasörde çalıştırıldı. Depodaki klasör yapısına göre yolları
-  henüz uyarlanmadı (bkz. teknik rapor, 6. bölüm).
+- Betikler orijinal ortamda (`~/tarama`, WSL2) düz bir klasörde çalıştırıldı ve girdi JSON'larını çalışılan klasörde
+  arıyor (bkz. teknik rapor, 6. bölüm). Çıktı klasörleri ortam değişkenleriyle seçilir:
+  `CIKTI_DIR` (matplotlib figürleri), `GORSEL_DIR` / `GORSEL_DIR_CHIMERAX` (ChimeraX dosyaları; WSL'de Windows yolu),
+  `KOPYA_DIR` (`calistir_v4.sh` sonuçlarının kopyası). Varsayılan: çalışılan klasör.
+- `asama2_porfirin/visuals/chimerax_betikleri/*.cxc` dosyaları orijinal Windows yollarını içeren tarihsel çıktılardır.
+  Yeniden üretmek için `gorsel_hq.py` ve `gercek_ilac.py` betiklerini çalıştırın.
 
 ## Dürüst çerçeve
 

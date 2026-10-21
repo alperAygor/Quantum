@@ -1,3 +1,4 @@
+import os  # CIKTI_DIR: figurlerin yazilacagi klasor (varsayilan: calisilan klasor)
 import numpy as np, matplotlib
 matplotlib.use("Agg"); import matplotlib.pyplot as plt
 from pyscf import gto, dft
@@ -21,5 +22,5 @@ for ax, (k, nm) in zip(axs.ravel(), [(n-2, "HOMO-1"), (n-1, "HOMO"), (n, "LUMO")
         if s == "H" and np.linalg.norm(c[:2]) < 1.5: ax.plot(c[0], c[1], "o", color="0.3", ms=4)
     ax.set_title(f"{nm}  (MO {k+1}, {en[k]*27.2114:.2f} eV)"); ax.set_aspect("equal"); ax.axis("off")
 fig.suptitle("Porfin: Gouterman'in 4 orbitali (molekul duzleminin 0.8 A ustu)\nkirmizi/mavi = dalga fonksiyonunun isareti", fontsize=12)
-plt.tight_layout(); plt.savefig("/mnt/user-data/outputs/porfin_gouterman_orbitaller.png", dpi=110)
+plt.tight_layout(); plt.savefig(os.environ.get("CIKTI_DIR", ".") + "/porfin_gouterman_orbitaller.png", dpi=110)
 print("ok")

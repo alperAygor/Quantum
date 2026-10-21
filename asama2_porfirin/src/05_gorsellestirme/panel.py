@@ -1,3 +1,4 @@
+import os  # CIKTI_DIR: figurlerin yazilacagi klasor (varsayilan: calisilan klasor)
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
@@ -41,4 +42,4 @@ for i, (k, v) in enumerate(rows):
     b.text(0.05, 0.32 - i*0.075, k, fontsize=9.5, color=MUTED); b.text(0.40, 0.32 - i*0.075, v, fontsize=9.5, color=INK)
 b.set_xlim(0, 1); b.set_ylim(0, 1)
 fig.suptitle("Porfin", x=0.05, ha="left", fontsize=16, color=INK, fontweight="bold")
-plt.savefig("/mnt/user-data/outputs/porfin_panel_2_3.png", dpi=150, facecolor=BG)
+plt.savefig(os.environ.get("CIKTI_DIR", ".") + "/porfin_panel_2_3.png", dpi=150, facecolor=BG)

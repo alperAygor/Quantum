@@ -8,8 +8,8 @@ for m in $MOLS; do
   python3 tddft_referans.py $m >> ${m}_tddft.log 2>&1; tail -3 ${m}_tddft.log | head -2
 done
 python3 final_figurler.py
-D=/mnt/c/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ; mkdir -p $D; cp F*_*.png final_tablo.csv final_ozet.txt $D/ 2>/dev/null
-echo "== Figurler masaustune kopyalandi: PDT_gorsel_HQ =="
+if [ -n "$KOPYA_DIR" ]; then mkdir -p "$KOPYA_DIR"; cp F*_*.png final_tablo.csv final_ozet.txt "$KOPYA_DIR"/ 2>/dev/null; fi
+[ -n "$KOPYA_DIR" ] && echo "== Figurler $KOPYA_DIR klasorune kopyalandi =="
 echo "== 2) Buyuk aktif uzay CAS(8,8)+NEVPT2: bakteriyoklorin, porfin (her biri ~1-3 saat) =="
 for m in bakteriyoklorin porfin; do
   if [ -f ${m}_cas88.json ] && grep -q NEVPT2 ${m}_cas88.json; then echo "$m: CAS(8,8) zaten var"; continue; fi

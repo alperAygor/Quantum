@@ -1,3 +1,4 @@
+import os  # CIKTI_DIR: figurlerin yazilacagi klasor (varsayilan: calisilan klasor)
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 D = [  # ad, hesap S1+NEVPT2, deney (None), f, triyaj, not
@@ -39,4 +40,4 @@ for ax in (a, b):
     ax.set_facecolor("#fcfcfb"); ax.grid(axis="x", color=GRID, lw=0.8); ax.set_axisbelow(True)
     for s in ("top", "right", "left"): ax.spines[s].set_visible(False)
     ax.spines["bottom"].set_color(GRID); ax.tick_params(colors=MUTED, length=0)
-plt.tight_layout(); plt.savefig("/mnt/user-data/outputs/tarama_sonuclari.png", dpi=150, facecolor="#fcfcfb")
+plt.tight_layout(); plt.savefig(os.environ.get("CIKTI_DIR", ".") + "/tarama_sonuclari.png", dpi=150, facecolor="#fcfcfb")

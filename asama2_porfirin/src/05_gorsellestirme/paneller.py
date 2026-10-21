@@ -1,3 +1,4 @@
+import os  # CIKTI_DIR: figurlerin yazilacagi klasor (varsayilan: calisilan klasor)
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
@@ -57,5 +58,5 @@ for (n, cas, nev, exp, expn, f, (w1, w2), t1, warn) in M:
         b.text(0.05, 0.36 - i * 0.065, k, fontsize=9.3, color=MUTED); b.text(0.38, 0.36 - i * 0.065, v, fontsize=9.3, color=INK)
     if warn: fig.text(0.05, 0.025, "⚠ " + warn, fontsize=9.5, color=WARN)
     fig.suptitle(n, x=0.05, ha="left", fontsize=16, color=INK, fontweight="bold")
-    plt.savefig(f"/mnt/user-data/outputs/paneller/{n}_panel_2_3.png", dpi=150, facecolor=BG); plt.close()
+    plt.savefig(os.environ.get("CIKTI_DIR", ".") + f"/paneller/{n}_panel_2_3.png", dpi=150, facecolor=BG); plt.close()
 print("ok")

@@ -1,3 +1,4 @@
+import os  # CIKTI_DIR: figurlerin yazilacagi klasor (varsayilan: calisilan klasor)
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt, numpy as np
 from pyscf.tools import molden
@@ -36,5 +37,5 @@ b.text(0.48, -7.0, f"Geri kalan {len(e) - 4} orbital → klasik hesap (NEVPT2)",
 b.set_ylim(-7.8, -1.4); b.set_xlim(0, 1.25); b.set_xticks([]); b.set_yticks([])
 for s in ("top", "right", "bottom", "left"): b.spines[s].set_visible(False)
 b.set_title("Yakınlaştırma: seçilen kuantum bölgesi", loc="left", color=INK, fontsize=12.5)
-plt.tight_layout(); plt.savefig("/mnt/user-data/outputs/porfin_orbital_secimi.png", dpi=150, facecolor=BG)
+plt.tight_layout(); plt.savefig(os.environ.get("CIKTI_DIR", ".") + "/porfin_orbital_secimi.png", dpi=150, facecolor=BG)
 print(nocc, len(e), e[act])

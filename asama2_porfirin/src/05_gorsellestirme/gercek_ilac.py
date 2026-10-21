@@ -3,7 +3,8 @@
 import os, numpy as np
 from rdkit import Chem
 from rdkit.Chem import AllChem
-OUT = "/mnt/c/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ"; W = "C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ"
+OUT = os.environ.get("GORSEL_DIR", os.path.abspath("PDT_gorsel_HQ"))  # Python'un yazdigi klasor
+W = os.environ.get("GORSEL_DIR_CHIMERAX", OUT)  # ChimeraX'in gorecegi yol (WSL + Windows: C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ)
 CORE = {"porfin": "C1=CC2=CC3=CC=C(N3)C=C4C=CC(=N4)C=C5C=CC(=N5)C=C1N2",
         "klorin": "C1CC2=CC3=CC=C(N3)C=C4C=CC(=N4)C=C5C=CC(=N5)C=C1N2"}
 ILAC = [  # ad, klinik bilgi, cekirdek, SMILES (Wikipedia/PubChem)

@@ -1,3 +1,4 @@
+import os  # CIKTI_DIR: figurlerin yazilacagi klasor (varsayilan: calisilan klasor)
 import numpy as np, matplotlib
 matplotlib.use('Agg'); import matplotlib.pyplot as plt
 BLUE='#2a78d6'; ORANGE='#eb6834'; INK='#0b0b0b'; INK2='#52514e'; GRID='#e4e3df'; SURF='#fcfcfb'
@@ -30,4 +31,4 @@ for c in range(1,h.shape[1]):
 a2.set_ylabel('Örnek sayısı'); a2.set_xlabel('ξ: misafirin CD ekseni boyunca konumu [nm]   (− dar kenar,  + geniş kenar)')
 a2.set_title('Pencere histogramları (örtüşme kontrolü)',loc='left',color=INK,fontsize=11)
 a2.set_xlim(-1.95,1.95)
-fig.tight_layout(); fig.savefig('/mnt/user-data/outputs/PMF_bCD_siklopentanol.png',dpi=160,facecolor=SURF)
+fig.tight_layout(); fig.savefig(os.environ.get("CIKTI_DIR", ".") + '/PMF_bCD_siklopentanol.png',dpi=160,facecolor=SURF)

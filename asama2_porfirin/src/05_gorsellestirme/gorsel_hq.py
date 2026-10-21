@@ -4,8 +4,8 @@ import os, sys, glob, json
 import numpy as np
 from pyscf import gto, scf, dft, mcscf, fci
 from pyscf.tools import cubegen, molden
-OUT_WIN = "C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ"
-OUT = "/mnt/c/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ"
+OUT = os.environ.get("GORSEL_DIR", os.path.abspath("PDT_gorsel_HQ"))      # Python'un yazdigi klasor
+OUT_WIN = os.environ.get("GORSEL_DIR_CHIMERAX", OUT)  # ChimeraX'in gorecegi yol (WSL + Windows: C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ)
 RES, MARGIN = 0.1 / 0.529177, 7.0          # izgara araligi 0.1 A (bohr cinsinden), kenar payi 7 bohr (~3.7 A)
 os.makedirs(OUT, exist_ok=True)
 names = sys.argv[1:] or [f.replace("_v3_sonuc.json", "") for f in sorted(glob.glob("*_v3_sonuc.json"))]
