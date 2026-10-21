@@ -1,0 +1,10 @@
+# IBM Quantum betikleri (ibm_vqe.py, hesap_kaydet.py) için sabitlenmiş sürümler.
+# numpy 2.5.x / scipy 1.18.x, macOS 27'de PySCF'in yoğunluk uydurması (DF) sırasında
+# rastgele çökmeye ve sessizce yanlış Hamiltonyene yol açtı; bu sürümler 4/4 tekrarlanabilir sonuç verdi.
+numpy==2.4.6
+scipy==1.17.1
+pyscf==2.14.0
+pennylane==0.45.1
+qiskit==2.6.0
+qiskit-ibm-runtime==0.50.0
+qiskit-aer==0.17.2

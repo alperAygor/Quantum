@@ -37,6 +37,7 @@ def hamiltonyen():
     ecp = "def2-svp" if any(l.split()[0] == "Pd" for l in lines) else None
     mol = gto.M(atom=f"{NAME}.xyz", basis="def2-svp", ecp=ecp, verbose=0, max_memory=int(os.environ.get("QMEM", "6000")))
     ks = dft.RKS(mol, xc="b3lyp").density_fit(); ks.grids.level = 1; ks.run()
+    if not ks.converged: sys.exit("B3LYP yakinsamadi; Hamiltonyen guvenilir degil")
     mf = scf.RHF(mol).density_fit(); mo = ks.mo_coeff
     cS = mcscf.CASCI(mf, 4, 4); cS.fcisolver = fci.addons.fix_spin_(fci.direct_spin1.FCI(mol), ss=0)
     cS.fcisolver.nroots = 3; cS.kernel(mo)
@@ -83,7 +84,7 @@ def adapt(Hm, M, ref, hedef, maxop=14, tol=1.6e-3):
                      jac=lambda x: np.array(g(pnp.array(x, requires_grad=True))), method="BFGS")
         th = r.x; psi = np.array(c(pnp.array(th))); E = float(np.real(np.conj(psi) @ Hm @ psi))
         log(f"   kapi {it+1:2d}: {ops[-1]}  hedeften fark {(E-hedef)*1000:7.2f} mHa")
-        if E - hedef < tol: break
+        if abs(E - hedef) < tol: break   # hedefin altina inmek (S1'de S0 karisimi) yakinsama sayilmaz
     return ops, th, psi, E
 
 def devre(ops, th, ref):
@@ -142,6 +143,8 @@ if KMD == "hazirla":
          "VQE_ideal_kesik_H_S1_eV": (ideal["S1"]-ideal["S0"])*EV, "kapi_S0": len(ops0), "kapi_S1": len(ops1),
          "pauli_terim": len(obs), "esik": ESIK}
     log(f"   ideal VQE S1 = {R['VQE_ideal_S1_eV']:.3f} eV (CASCI {R['CASCI_S1_eV']:.3f}); kesik H ile {R['VQE_ideal_kesik_H_S1_eV']:.3f} eV")
+    if abs(R["VQE_ideal_S1_eV"] - R["CASCI_S1_eV"]) > 0.05:
+        log(f"   UYARI: ideal VQE tam cozumden {R['VQE_ideal_S1_eV'] - R['CASCI_S1_eV']:+.3f} eV uzak; devre donanima gonderilmeden once incelenmeli")
     # 3) Gurultulu simulasyon tahmini (FakeKingston = ibm_kingston gurultu modeli)
     try:
         from qiskit import transpile
