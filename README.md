@@ -25,7 +25,10 @@ Triyaj kuralı: S1 halinde ikinci elektron konfigürasyonunun ağırlığı **> 
 | `ibm/ibm_vqe_kompakt.py` (21 durumluk singlet alt uzayı, 21 Ekim 2026) | 5 | 60 / 60 | −0,90 eV | **+0,41 ± 0,14 eV** |
 
 Kompakt yöntem aynı hesabı daha kısa devreyle yapar ve donanım hatasını yaklaşık yarıya indirir.
-Ham veri: [`ibm/sonuclar/`](ibm/sonuclar/), iş kimliği `dbc7ngvi0auc73duc220` (276 s QPU).
+Aynı yöntemle klorin ("klasik yeterli" sınıfı, CASCI = 3,453 eV, 3072 atış): ham −1,39 eV, düzeltilmiş **−0,34 ± 0,21 eV**.
+Ham veri: [`ibm/sonuclar/`](ibm/sonuclar/); iş kimlikleri porfin `dbc7ngvi0auc73duc220`, klorin `dbc8bqgc77vs7385o1hg`.
+Not: Bugünkü donanım hatası (~0,3–0,4 eV) hâlâ kimyasal doğruluk hedefinin (~0,1 eV) üstünde; 8 kübitlik bu hesap klasikte tam çözülebilir,
+kuantum avantajı iddia edilmez.
 
 Ayrıntılı teknik rapor: [`docs/00_Master_Teknik_Rapor.md`](docs/00_Master_Teknik_Rapor.md).
 
