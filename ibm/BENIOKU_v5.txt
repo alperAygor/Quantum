@@ -1,0 +1,17 @@
+v5 - VQE'yi gercek IBM kuantum bilgisayarinda calistirma (porfin, 8 kubit)
+
+0) Hesap (bir kez, tarayicida): https://quantum.cloud.ibm.com/registration  -> Open Plan (ucretsiz, ayda 10 dk)
+   Giris yaptiktan sonra ana sayfadan "API key" olustur ve kopyala.
+1) Kurulum (bir kez):
+   source ~/qenv/bin/activate
+   pip install "qiskit==2.6.0" "qiskit-ibm-runtime==0.50.0" "qiskit-aer==0.17.2"
+   cd ~/tarama && tar xzf /mnt/c/Users/<KULLANICI>/Downloads/kuantum_triyaj_paketi_v5.tar.gz
+   python3 hesap_kaydet.py          (API anahtarini sen yapistirirsin; ekranda gorunmez)
+2) Hazirlik (ucretsiz, ~2-3 dk):   python3 ibm_vqe.py hazirla porfin
+   -> kompakt devre, ideal sonuc ve ibm_kingston gurultu modeliyle simulasyon tahmini
+3) Kuru deneme (ucretsiz):         python3 ibm_vqe.py gonder porfin --sahte && python3 ibm_vqe.py sonuc porfin --sahte
+4) Gercek donanim:                 python3 ibm_vqe.py gonder porfin      (onay sorar; ~3-6 dk QPU)
+   Sirada bekleyebilir (dakikalar-saatler). Durum: https://quantum.cloud.ibm.com/workloads
+5) Sonuc:                          python3 ibm_vqe.py sonuc porfin
+   -> porfin_ibm_sonuc.json ; tablo: tam cozum / ideal VQE / gurultulu sim / donanim (ham, duzeltilmis)
+Ikinci molekul (ay icinde sure kalirsa): klorin (klasik yeterli sinifi) ile ayni adimlar.

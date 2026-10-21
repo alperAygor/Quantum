@@ -1,0 +1,4 @@
+Bu klasordeki *_v3_sonuc.json dosyalari kullanicinin bilgisayarindaki orijinal dosyalar DEGILDIR.
+final_figurler.py'yi sandbox'ta calistirmak icin, belgelenmis v3 sonuclarindan (docs/03_Tarama_v3_sonuclar.md) yeniden olusturuldu ve yalnizca su alanlari icerir: S1_CAS_eV, S1_NEVPT2_eV, f_S1, S1_konfig_agirlik, triyaj, T1_dSCF_eV.
+Orijinal tam dosyalar (VQD/CASCI farki, metal payi, sure vb. dahil): kullanicinin bilgisayarinda ~/tarama/*_v3_sonuc.json.
+Ayni durum tddft_json/ icin de gecerli: porfin ve klorin degerleri kullanicinin ekran goruntusundeki log satirlarindan alindi.

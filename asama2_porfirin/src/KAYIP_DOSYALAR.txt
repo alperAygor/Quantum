@@ -1,0 +1,4 @@
+Arsiv olusturulurken bulunamayan betikler (sohbetin ilk bolumunde kullanicinin bilgisayarinda yazilip sandbox'a hic gelmemis olabilir):
+
+
+Ayrica kullanicinin bilgisayarinda olup arsive alinamayanlar: misafir_qm.py (beta-CD misafir RHF/MP2), GROMACS .mdp dosyalari ve tum yorunge (.xtc/.trr) dosyalari, ~/tarama/*_tddft.json (porfin ve klorin disindakiler), *_vqe_parametreleri.json, ibm_vqe.py'nin kullanici bilgisayarinda olusturdugu porfin_ibm_hazir.pkl / porfin_ibm_is.json.

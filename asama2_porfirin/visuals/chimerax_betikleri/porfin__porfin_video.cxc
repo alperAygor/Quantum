@@ -1,0 +1,30 @@
+close session
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/porfin/porfin.pdb
+set bgColor white
+style ball
+size stickRadius 0.11
+size ballScale 0.22
+color C #909090 target a
+color N #3050f8 target a
+color H #f4f4f4 target a
+lighting full
+lighting shadows true intensity 0.5
+lighting multiShadow 512
+lighting depthCue false
+material specular 0.3 exponent 30
+graphics silhouettes true width 2 color #303030
+graphics quality 5
+camera ortho
+
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/porfin/porfin_fark.cube
+volume #2 style surface level -0.00058 color #2f6fd0 level 0.00058 color #f0782f transparency 0.1 surfaceSmoothing true smoothingIterations 4 squareMesh false
+view
+turn x -35
+turn z 15
+view pad 0.15
+2dlabels text "porfin   |   S1 = 1.87 eV (663 nm)   |   f = 0.033   |   KUANTUM GEREKLI" xpos 0.02 ypos 0.95 size 20 color black bold true
+2dlabels text "S0 -> S1: turuncu = elektronun geldigi yer, mavi = elektronun ayrildigi yer" xpos 0.02 ypos 0.03 size 15 color dimgray
+movie record supersample 3 size 1920,1080
+turn y 1 360
+wait 360
+movie encode C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/porfin/porfin_video.mp4 quality highest framerate 30

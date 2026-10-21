@@ -1,0 +1,74 @@
+B3LYP (baslangic orbitalleri)  [79 s]
+
+******** <class 'pyscf.mcscf.addons.StateAverageDFCASSCF'> ********
+CAS (2e+2e, 4o), ncore = 79, nvir = 323
+max_cycle_macro = 50
+max_cycle_micro = 4
+conv_tol = 1e-07
+conv_tol_grad = None
+orbital rotation max_stepsize = 0.02
+orbital rotation threshold for CI restart = 0.01
+augmented hessian ah_max_cycle = 30
+augmented hessian ah_conv_tol = 1e-12
+augmented hessian ah_linear dependence = 1e-14
+augmented hessian ah_level shift = 1e-08
+augmented hessian ah_start_tol = 2.5
+augmented hessian ah_start_cycle = 3
+augmented hessian ah_grad_trust_region = 3
+kf_trust_region = 3
+kf_interval = 4
+ci_response_space = 4
+ci_grad_trust_region = 3
+with_dep4 0
+natorb = False
+canonicalization = True
+sorting_mo_energy = False
+ao2mo_level = 2
+chkfile = /root/pyscf_tmp/tmp4j9hrg7i
+max_memory 5000 MB (current use 1513 MB)
+internal_rotation = False
+******** <class 'pyscf.mcscf.addons.StateAverageMixSpinPenaltyFCISolver'> ********
+max. cycles = 100
+conv_tol = 1e-10
+davidson only = True
+linear dependence = 1e-14
+level shift = 0.001
+max iter space = 12
+max_memory 5000 MB
+nroots = 3
+pspace_size = 400
+spin = None
+State-average over 3 states with weights [0.3333333333333333, 0.3333333333333333, 0.3333333333333333]
+DFCASCI/DFCASSCF: density fitting for JK matrix and 2e integral transformation
+CASCI E = -982.340718555758  S^2 = 0.6666667
+Set conv_tol_grad to 0.000316228
+macro iter   1 ( 11 JK    4 micro), CASSCF E = -982.460249383031  dE = -1.19530827e-01  S^2 = 0.6666667
+               |grad[o]|=0.786  |ddm|=0.0912  |maxRot[o]|=0.0903
+macro iter   2 ( 16 JK    4 micro), CASSCF E = -982.462099087431  dE = -1.84970440e-03  S^2 = 0.6666667
+               |grad[o]|=0.00661  |ddm|=0.0422  |maxRot[o]|=0.197
+macro iter   3 ( 16 JK    4 micro), CASSCF E = -982.463980134299  dE = -1.88104687e-03  S^2 = 0.6666667
+               |grad[o]|=0.00726  |ddm|=0.0364  |maxRot[o]|=0.145
+macro iter   4 ( 15 JK    4 micro), CASSCF E = -982.464135773870  dE = -1.55639571e-04  S^2 = 0.6666667
+               |grad[o]|=0.00366  |ddm|=0.00962  |maxRot[o]|=0.0419
+macro iter   5 (  8 JK    2 micro), CASSCF E = -982.464139737630  dE = -3.96375947e-06  S^2 = 0.6666667
+               |grad[o]|=0.000536  |ddm|=0.00141  |maxRot[o]|=0.00714
+macro iter   6 (  6 JK    1 micro), CASSCF E = -982.464139794184  dE = -5.65537448e-08  S^2 = 0.6666667
+               |grad[o]|=8.13e-05  |ddm|=0.00016  |maxRot[o]|=0.000602
+1-step CASSCF converged in   6 macro ( 72 JK  19 micro) steps
+CASSCF canonicalization
+Density matrix diagonal elements [1.42937697 1.74169256 0.54523097 0.28369951]
+CASSCF energy = -982.464139794184
+CASCI E = -982.464139794184  E(CI) = -1.96051144153944  S^2 = 0.6666667
+CASCI state-averaged energy = -982.464139794184
+CASCI energy for each state
+  State 0 weight 0.333333  E = -982.529442067286 S^2 = 0.0000000
+  State 1 weight 0.333333  E = -982.411477467884 S^2 = 0.0000000
+  State 2 weight 0.333333  E = -982.451499847381 S^2 = 2.0000000
+SA-CASSCF yakinsadi: True  [1953 s]
+CASCI (SA orbitalleri): S1 3.210 eV, T1 2.121 eV  [1989 s]
+
+PORFIN, SA-CASSCF(4,4) orbitalleri (eV)
+           CAS  +NEVPT2   Deney / Literatur
+S1       3.210      nan   deney 1.98-2.02, lit. NEVPT2 1.96
+T1       2.121      nan
+Toplam sure: 1989 s

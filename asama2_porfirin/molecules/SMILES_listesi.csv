@@ -1,0 +1,13 @@
+molekul,tur,SMILES_veya_tanim,uretildigi_betik
+porfin,cekirdek,C1=CC2=CC3=CC=C(N3)C=C4C=CC(=N4)C=C5C=CC(=N5)C=C1N2,geo.py
+klorin,cekirdek,C1CC2=CC3=CC=C(N3)C=C4C=CC(=N4)C=C5C=CC(=N5)C=C1N2,geo.py
+bakteriyoklorin,cekirdek,C1CC2=CC3=NC(=CC4=CC=C(N4)C=C5CCC(=N5)C=C1N2)C=C3,geo.py
+tetrametilporfin,cekirdek,CC1=C2C=CC(=C(C)C3=CC=C(N3)C(C)=C4C=CC(=N4)C(C)=C5C=CC1=N5)N2,geo.py
+porfirazin,cekirdek,C1=CC2=NC3=CC=C(N3)N=C4C=CC(=N4)N=C5C=CC(=N5)N=C1N2,geo.py
+Zn-porfin,metal cekirdek,"porfin iskeleti, ic NH hidrojenleri cikarilip merkeze Zn (geo.py)",geo.py
+Mg-porfin,metal cekirdek,"porfin iskeleti, ic NH hidrojenleri cikarilip merkeze Mg (geo.py)",geo.py
+Pd-porfin,metal cekirdek,"porfin iskeleti, ic NH hidrojenleri cikarilip merkeze Pd (geo.py)",geo.py
+Temoporfin,"klinik ilac (Foscan), PubChem CID 60751",C1CC2=NC1=C(C3=CC=C(N3)C(=C4C=CC(=N4)C(=C5C=CC(=C2C6=CC(=CC=C6)O)N5)C7=CC(=CC=C7)O)C8=CC(=CC=C8)O)C9=CC(=CC=C9)O,gercek_ilac.py
+Talaporfin,"klinik ilac (Laserphyrin), PubChem CID 5486799",CCC1=C2C=C3C(=C(C(=N3)C(=C4[C@H]([C@@H](C(=N4)C=C5C(=C(C(=CC(=C1C)N2)N5)C=C)C)C)CCC(=O)O)CC(=O)N[C@@H](CC(=O)O)C(=O)O)C(=O)O)C,gercek_ilac.py
+Protoporfirin-IX,"klinik (5-ALA ile olusur), PubChem CID 4971; SMILES elle yazildi",C=CC1=C(C)C2=CC3=NC(=CC4=C(C)C(CCC(=O)O)=C(N4)C=C5N=C(C=C1N2)C(C)=C5CCC(=O)O)C(C)=C3C=C,gercek_ilac.py
+siklopentanol,misafir (ATB molid 859),OC1CCCC1,GROMACS/ATB

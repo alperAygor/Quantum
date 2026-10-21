@@ -1,0 +1,28 @@
+# İşletim sistemi / editör
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# qfe_demo çalışma çıktıları (her ön ayar için yeniden üretilir)
+asama1_bcd/qfe_demo/results/
+asama1_bcd/qfe_demo/data/complex.*
+asama1_bcd/qfe_demo/data/solvent.*
+asama1_bcd/qfe_demo/data/*_equil.npz
+asama1_bcd/qfe_demo/data/complex_dry.pdb
+
+# Büyük hesap çıktıları (MD yörüngeleri, PySCF geçici dosyaları)
+*.xtc
+*.trr
+*.edr
+*.chk
+*.cube
+pyscf_tmp/
+
+# IBM: hazırlık/iş dosyaları yerelde kalır; API anahtarı zaten Qiskit'in kendi ayarında (~/.qiskit)
+ibm/*_ibm_hazir.pkl
+ibm/*_ibm_is.json
+qiskit-ibm.json
+
+# Telif hakkı korumalı makale PDF'leri depoya konmaz (bkz. docs/References.md)
+*.pdf

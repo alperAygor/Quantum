@@ -1,0 +1,7 @@
+hesap,S1_eV,tam_cozumden_fark_eV,not
+"Tam cozum (CASCI, klasik)",3.617,0.0,referans
+VQE ideal simulator,3.616,-0.001,statevector
+VQE FakeKingston gurultu sim. ham,2.825,-0.792,"sandbox, qiskit-aer"
+VQE FakeKingston duzeltilmis,4.095,0.478,sandbox
+VQE ibm_kingston ham,1.141,-2.477,"is dbbl9ns24mrc73chvt8g, 20.10.2026 14:47"
+VQE ibm_kingston duzeltilmis,4.546,0.928,"istatistik belirsizlik 0.190 eV; gurultu faktoru f(S0,S1)=0.41,0.53"

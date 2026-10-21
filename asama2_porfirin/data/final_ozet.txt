@@ -1,0 +1,13 @@
+ORTALAMA MUTLAK HATA (eV), deneye gore
+  Bizim: VQE(8 kübit)+NEVPT2       tum: 0.07 (n=2)   dogrudan deney: 0.07 (n=2)
+  TD-DFT B3LYP                     tum: 0.394 (n=2)   dogrudan deney: 0.394 (n=2)
+
+T1 (eV) - porfin deney 1.58 (fosforesans)
+  Porfin            dSCF 2.00   TDA-B3LYP 1.83   TDA-CAM nan
+  Zn-porfin         dSCF 2.08   TDA-B3LYP nan   TDA-CAM nan
+  Mg-porfin         dSCF 2.05   TDA-B3LYP nan   TDA-CAM nan
+  Pd-porfin         dSCF 2.16   TDA-B3LYP nan   TDA-CAM nan
+  Tetrametilporfin  dSCF 1.58   TDA-B3LYP nan   TDA-CAM nan
+  Klorin            dSCF 1.53   TDA-B3LYP 1.54   TDA-CAM nan
+  Porfirazin        dSCF 1.65   TDA-B3LYP nan   TDA-CAM nan
+  Bakteriyoklorin   dSCF 1.65   TDA-B3LYP nan   TDA-CAM nan

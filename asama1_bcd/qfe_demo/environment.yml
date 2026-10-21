@@ -1,0 +1,28 @@
+# Kurulum (WSL2 Ubuntu içinde):
+#   mamba env create -f environment.yml
+#   conda activate qfe
+name: qfe
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - openmm>=8.1
+  - cuda-version=12        # NVIDIA GPU için (sürücünüz CUDA 12 destekliyorsa). GPU yoksa bu satırı silin.
+  - openmmtools>=0.23
+  - pymbar>=4
+  - parmed
+  - pyscf>=2.4
+  - numpy
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - jupyterlab
+  - nbconvert
+  - ipykernel
+  - py3dmol
+  - pip
+  - pip:
+      - openfermion>=1.6
+      # İsteğe bağlı, gerçek kuantum donanımı için:
+      # - qiskit
+      # - qiskit-ibm-runtime

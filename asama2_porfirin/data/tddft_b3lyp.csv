@@ -1,0 +1,9 @@
+molekul,TDDFT_B3LYP_S1_eV,f_S1,TDA_B3LYP_T1_eV,deney_S1_eV,fark_eV,S1_nm,durum
+porfin,2.348,0.001,1.832,1.98,0.368,528.0,tamamlandi
+klorin,2.369,0.174,1.54,1.95,0.419,523.4,tamamlandi
+Zn-porfin,,,,2.18,,,"tamamlandi; deger ~/tarama/Zn-porfin_tddft.json icinde, arsive aktarilmadi"
+Mg-porfin,,,,2.17,,,"tamamlandi; deger ~/tarama/Mg-porfin_tddft.json icinde, arsive aktarilmadi"
+porfirazin,,,,2.065,,,"tamamlandi; deger ~/tarama/porfirazin_tddft.json icinde, arsive aktarilmadi"
+bakteriyoklorin,,,,1.74,,,"tamamlandi; deger ~/tarama/bakteriyoklorin_tddft.json icinde, arsive aktarilmadi"
+tetrametilporfin,,,,1.88,,,hesap suruyor
+Pd-porfin,,,,,,,hesap suruyor

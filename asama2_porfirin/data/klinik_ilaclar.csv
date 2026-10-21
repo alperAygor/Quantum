@@ -1,0 +1,5 @@
+ilac,ticari_ad,cekirdek,atom_sayisi,klinik_isik_nm,isik_kaynagi,hizalama_RMSD_A,bizim_cekirdek_S1_eV,bizim_nm,fark_nm,TDDFT_cekirdek_S1_eV,TDDFT_nm,TDDFT_fark_nm,triyaj
+Temoporfin,Foscan,klorin,84,652,EMA urun bilgisi,0.4,1.98,626.2,25.8,2.369,523.4,128.6,klasik yeterli
+Talaporfin,Laserphyrin,klorin,93,664,Wikipedia (664-667 nm),0.24,1.98,626.2,37.8,2.369,523.4,140.6,klasik yeterli
+Protoporfirin IX,5-ALA / Ameluz,porfin,76,635,FDA Ameluz etiketi 2017,0.22,1.87,663.0,28.0,2.348,528.0,107.0,KUANTUM GEREKLI
+Padeliporfin,Tookad,bakteriyoklorin,,753,emc SmPC,,2.23,556.0,197.0,,,,model yetersiz

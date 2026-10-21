@@ -1,0 +1,17 @@
+close session
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/klorin/Temoporfin.pdb
+set bgColor white
+style sphere
+color byelement
+color C #8a8a8a
+lighting soft
+lighting shadows true intensity 0.6
+lighting multiShadow 1024
+material specular 0.4 exponent 40
+graphics silhouettes true width 2 color #2a2a2a
+turn x -40
+turn z 20
+view
+view pad 0.1
+2dlabels text "Temoporfin  -  Foscan (AB) - bas-boyun kanseri PDT" xpos 0.02 ypos 0.94 size 22 color black bold true
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/klorin/Temoporfin_molekul.png width 3000 height 2000 supersample 4

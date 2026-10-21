@@ -1,0 +1,22 @@
+[porfin] 1) Hamiltonyen (B3LYP orbitalleri, CAS(4,4)) ...
+   CASCI S1 = 3.617 eV ; olculecek Pauli terimi 121, olcum grubu 52
+[porfin] 2) Kompakt ADAPT-VQE: S0 (HF referansi)
+   kapi  1: ('D', [0, 2, 4, 6])  hedeften fark   22.74 mHa
+   kapi  2: ('D', [1, 3, 5, 7])  hedeften fark   14.69 mHa
+   kapi  3: ('D', [2, 3, 6, 7])  hedeften fark   11.21 mHa
+   kapi  4: ('D', [0, 1, 4, 5])  hedeften fark    7.81 mHa
+   kapi  5: ('D', [2, 3, 4, 5])  hedeften fark    5.14 mHa
+   kapi  6: ('D', [0, 1, 6, 7])  hedeften fark    2.39 mHa
+   kapi  7: ('D', [0, 3, 5, 6])  hedeften fark    1.78 mHa
+   kapi  8: ('D', [1, 2, 4, 7])  hedeften fark    0.98 mHa
+[porfin]    S1 (VQD: HOMO->LUMO referansi, S^2 ve S0'a dikeylik cezasi)
+   kapi  1: ('D', [0, 2, 4, 6])  hedeften fark   16.03 mHa
+   kapi  2: ('D', [1, 2, 4, 7])  hedeften fark  354.58 mHa
+   kapi  3: ('D', [0, 3, 5, 6])  hedeften fark   43.65 mHa
+   kapi  4: ('D', [0, 1, 6, 7])  hedeften fark   42.05 mHa
+   kapi  5: ('D', [2, 3, 4, 5])  hedeften fark    0.85 mHa
+   ideal VQE S1 = 3.614 eV (CASCI 3.617); kesik H ile 3.616 eV
+[porfin] 3) FakeKingston gurultulu simulasyon: 2-kubit kapi S0 264, S1 170
+   S1 ham 2.83 eV, duzeltilmis 4.09 eV  (ideal 3.62)
+[porfin] Hazir -> porfin_ibm_hazir.pkl  (140 s)
+   Donanim maliyeti tahmini: 4 devre x 52 grup x 4096 atis ~ 0.85 M atis ~ 3-6 dk QPU

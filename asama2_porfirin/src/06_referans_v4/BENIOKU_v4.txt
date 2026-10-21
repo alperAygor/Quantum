@@ -1,0 +1,15 @@
+Kuantum triyaj paketi v4 - klasik referans + final figurler
+(v3 sonuclarinin bulundugu ~/tarama klasorunde calisir; v3 dosyalarina dokunmaz)
+
+1) cd ~/tarama && tar xzf /mnt/c/Users/<KULLANICI>/Downloads/kuantum_triyaj_paketi_v4.tar.gz
+2) source ~/qenv/bin/activate
+3) nohup bash calistir_v4.sh > v4.log 2>&1 &
+4) Takip: tail -f v4.log     (Ctrl+C sadece takibi durdurur, hesap devam eder)
+
+Sira: TD-DFT (8 molekul, ~1-2 saat) -> figurler masaustune -> CAS(8,8) bakteriyoklorin, porfin (uzun, opsiyonel).
+Figurler her asamadan sonra guncellenir: Masaustu/PDT_gorsel_HQ/F1..F3 + final_ozet.txt
+
+Dosyalar:
+  tddft_referans.py  klasik referans: TD-DFT B3LYP ve CAM-B3LYP singletler (S1, f) + TDA tripletler (T1)
+  cas_buyuk.py       CAS(8e,8o) = 16 kubit esdegeri + NEVPT2 (bakteriyoklorin hatasini test eder)
+  final_figurler.py  F1 yontem karsilastirmasi, F2 triyaj dogrulamasi, F3 klinik ilaclar, final_tablo.csv, final_ozet.txt

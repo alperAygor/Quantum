@@ -1,0 +1,21 @@
+Porfin: 38 atom, 162 elektron, 406 baz fonksiyonu
+B3LYP: HOMO-1 -5.53  HOMO -5.40  LUMO -2.46  LUMO+1 -2.40 eV  [127 s]
+CASCI bitti  [207 s]
+Kubit Hamiltonyeni: 8 kubit, 361 Pauli terimi
+VQE/VQD bitti  [494 s]
+
+PORFIN UYARILMIS HALLERI (eV, taban hale gore)
+ hal  VQE/VQD    CASCI     fark  +NEVPT2  f (siddet)   baskin konfigurasyonlar (agirlik)
+  S0    0.000    0.000  0.0e+00      nan    0.000     HF 0.93 | H-1,H->L,L+1 0.03
+  S1    3.617    3.617  0.0e+00      nan    0.033 x   H-1->L+1 0.54 | H->L 0.44
+  S2    3.743    3.743 -1.7e-10      nan    0.068 y   H-1->L 0.59 | H->L+1 0.39
+  S3    5.345    5.345 -6.8e-11      nan    2.131 y   H->L+1 0.47 | H-1->L 0.31
+  S4    5.515    5.515  1.5e-11      nan    2.763 x   H->L 0.45 | H-1->L+1 0.37
+  T1    2.708    2.708 -1.1e-09      nan        -     H-1->L 0.70 | H->L+1 0.25
+  T2    2.906    2.906 -9.3e-11      nan        -     H-1->L+1 0.63 | H->L 0.33
+
+VQD spin kontrolu <S^2>: singletler [0. 0. 0. 0. 0.], tripletler [2. 2.]
+Klasik tek-determinant tahmini (B3LYP HOMO-LUMO): 2.94 eV
+Deney (gaz fazi): Qx ~1.98, Qy ~2.42 (zayif), Soret/B ~3.33 eV (cok siddetli)
+PDT: T1 (VQD, sadece aktif uzay) = 2.71 eV; singlet oksijen (1O2) icin T1 > 0.98 eV -> EVET
+Toplam sure: 494 s

@@ -1,0 +1,9 @@
+molekul,deney_S1,deney_tip,bizim_S1,TD_B3LYP_S1,TD_CAM_S1,f_S1_bizim,f_S1_TDB3LYP,ikinci_konfig_agirlik,triyaj,T1_dSCF,T1_TDA_B3LYP,T1_TDA_CAM,CAS88_S1_NEVPT2,CAS88_agirlik
+porfin,1.98,dogrudan,1.87,2.348,,0.033,0.001,0.435,KUANTUM GEREKLI,2.0,1.832,,,
+Zn-porfin,2.18,dogrudan,2.07,,,0.079,,0.367,KUANTUM GEREKLI,2.08,,,,
+Mg-porfin,2.17,dogrudan,2.04,,,0.073,,0.373,KUANTUM GEREKLI,2.05,,,,
+Pd-porfin,,yok,2.14,,,0.085,,0.355,KUANTUM GEREKLI,2.16,,,,
+tetrametilporfin,1.88,analog/vekil,1.64,,,0.001,,0.47,KUANTUM GEREKLI,1.58,,,,
+klorin,1.95,dogrudan,1.98,2.369,,0.579,0.174,0.098,klasik yeterli,1.53,1.54,,,
+porfirazin,2.065,dogrudan,2.24,,,0.633,,0.139,klasik yeterli,1.65,,,,
+bakteriyoklorin,1.74,analog/vekil,2.23,,,0.422,,0.168,klasik yeterli,1.65,,,,

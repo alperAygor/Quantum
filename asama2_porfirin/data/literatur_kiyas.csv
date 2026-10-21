@@ -1,0 +1,6 @@
+calisma,molekul_ailesi,yontem,kubit,donanim,deneye_MAE_eV,not
+Bu proje,porfirin (8),"CAS(4,4) VQD + NEVPT2",8,simulator + ibm_kingston,0.111 (5 mol) / 0.184 (7 mol),TD-DFT B3LYP 0.39 vs 0.07 (porfin+klorin)
+Algorithmiq dADAPT 2024,BODIPY (6),"dUCCSD(8,8)",16,gurultusuz simulator,0.131,klasik dCCSD 0.054; TD-DFT 0.199/0.368/0.392; EOM-CCSD 0.498
+Algorithmiq Q4Bio 2026,TLD1433 Ru(II),ADAPT-VMPE + QB-DMRG,52-100,ibm_cleveland,-,S0 enerjisi; deney kiyasi yok
+Xanadu 2025,BODIPY (4 sinif),"QSP esik projeksiyonu, ISC proxy",180-350 mantiksal,yok (FTQC),-,kaynak tahmini
+JCTC 2019,porfin,"CASSCF/NEVPT2, CASPT2, MRCI",-,klasik,"Qx: NEVPT2 1.96, CASPT2 1.70, MRCI 1.90 (deney 1.98-2.02)",

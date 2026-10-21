@@ -1,0 +1,24 @@
+{
+ "molekul": "porfin",
+ "CASCI_S1_eV": 3.6172451895755695,
+ "VQE_ideal_S1_eV": 3.613741099250331,
+ "VQE_ideal_kesik_H_S1_eV": 3.6162393071625267,
+ "kapi_S0": 8,
+ "kapi_S1": 5,
+ "pauli_terim": 121,
+ "esik": 0.001,
+ "cz_S0": 264,
+ "cz_S1": 170,
+ "sim_ham_S1_eV": 2.8250272943015045,
+ "sim_duzeltilmis_S1_eV": 4.094812261182363,
+ "donanim": "fake_kingston",
+ "job_id": "e08102cf-2d3c-4c05-95fe-28ee2cc57dbe",
+ "atis": 4096,
+ "donanim_ham_S1_eV": 3.290904380364612,
+ "donanim_duzeltilmis_S1_eV": 2.8898099236023085,
+ "istatistik_hata_eV": 1.0412250800298997,
+ "gurultu_f": [
+  0.699193779347982,
+  0.5483446288716585
+ ]
+}

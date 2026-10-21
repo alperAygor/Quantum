@@ -1,0 +1,176 @@
+close session
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/Mg-porfin/Mg-porfin.pdb
+set bgColor white
+style sphere
+color byelement
+color C #8a8a8a
+lighting soft
+lighting shadows true intensity 0.6
+lighting multiShadow 1024
+material specular 0.4 exponent 40
+graphics silhouettes true width 2 color #2a2a2a
+graphics quality 6
+turn x -35
+turn z 15
+view
+view pad 0.12
+2dlabels text "Mg-porfin" xpos 0.03 ypos 0.92 size 28 color black bold true
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/Mg-porfin/Mg-porfin_molekul.png width 3000 height 2000 supersample 4
+style ball
+size stickRadius 0.14
+size ballScale 0.25
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/Mg-porfin/Mg-porfin_molekul_cubuk.png width 3000 height 2000 supersample 4
+close session
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/Pd-porfin/Pd-porfin.pdb
+set bgColor white
+style sphere
+color byelement
+color C #8a8a8a
+lighting soft
+lighting shadows true intensity 0.6
+lighting multiShadow 1024
+material specular 0.4 exponent 40
+graphics silhouettes true width 2 color #2a2a2a
+graphics quality 6
+turn x -35
+turn z 15
+view
+view pad 0.12
+2dlabels text "Pd-porfin" xpos 0.03 ypos 0.92 size 28 color black bold true
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/Pd-porfin/Pd-porfin_molekul.png width 3000 height 2000 supersample 4
+style ball
+size stickRadius 0.14
+size ballScale 0.25
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/Pd-porfin/Pd-porfin_molekul_cubuk.png width 3000 height 2000 supersample 4
+close session
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/Zn-porfin/Zn-porfin.pdb
+set bgColor white
+style sphere
+color byelement
+color C #8a8a8a
+lighting soft
+lighting shadows true intensity 0.6
+lighting multiShadow 1024
+material specular 0.4 exponent 40
+graphics silhouettes true width 2 color #2a2a2a
+graphics quality 6
+turn x -35
+turn z 15
+view
+view pad 0.12
+2dlabels text "Zn-porfin" xpos 0.03 ypos 0.92 size 28 color black bold true
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/Zn-porfin/Zn-porfin_molekul.png width 3000 height 2000 supersample 4
+style ball
+size stickRadius 0.14
+size ballScale 0.25
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/Zn-porfin/Zn-porfin_molekul_cubuk.png width 3000 height 2000 supersample 4
+close session
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/bakteriyoklorin/bakteriyoklorin.pdb
+set bgColor white
+style sphere
+color byelement
+color C #8a8a8a
+lighting soft
+lighting shadows true intensity 0.6
+lighting multiShadow 1024
+material specular 0.4 exponent 40
+graphics silhouettes true width 2 color #2a2a2a
+graphics quality 6
+turn x -35
+turn z 15
+view
+view pad 0.12
+2dlabels text "bakteriyoklorin" xpos 0.03 ypos 0.92 size 28 color black bold true
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/bakteriyoklorin/bakteriyoklorin_molekul.png width 3000 height 2000 supersample 4
+style ball
+size stickRadius 0.14
+size ballScale 0.25
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/bakteriyoklorin/bakteriyoklorin_molekul_cubuk.png width 3000 height 2000 supersample 4
+close session
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/klorin/klorin.pdb
+set bgColor white
+style sphere
+color byelement
+color C #8a8a8a
+lighting soft
+lighting shadows true intensity 0.6
+lighting multiShadow 1024
+material specular 0.4 exponent 40
+graphics silhouettes true width 2 color #2a2a2a
+graphics quality 6
+turn x -35
+turn z 15
+view
+view pad 0.12
+2dlabels text "klorin" xpos 0.03 ypos 0.92 size 28 color black bold true
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/klorin/klorin_molekul.png width 3000 height 2000 supersample 4
+style ball
+size stickRadius 0.14
+size ballScale 0.25
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/klorin/klorin_molekul_cubuk.png width 3000 height 2000 supersample 4
+close session
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/porfin/porfin.pdb
+set bgColor white
+style sphere
+color byelement
+color C #8a8a8a
+lighting soft
+lighting shadows true intensity 0.6
+lighting multiShadow 1024
+material specular 0.4 exponent 40
+graphics silhouettes true width 2 color #2a2a2a
+graphics quality 6
+turn x -35
+turn z 15
+view
+view pad 0.12
+2dlabels text "porfin" xpos 0.03 ypos 0.92 size 28 color black bold true
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/porfin/porfin_molekul.png width 3000 height 2000 supersample 4
+style ball
+size stickRadius 0.14
+size ballScale 0.25
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/porfin/porfin_molekul_cubuk.png width 3000 height 2000 supersample 4
+close session
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/porfirazin/porfirazin.pdb
+set bgColor white
+style sphere
+color byelement
+color C #8a8a8a
+lighting soft
+lighting shadows true intensity 0.6
+lighting multiShadow 1024
+material specular 0.4 exponent 40
+graphics silhouettes true width 2 color #2a2a2a
+graphics quality 6
+turn x -35
+turn z 15
+view
+view pad 0.12
+2dlabels text "porfirazin" xpos 0.03 ypos 0.92 size 28 color black bold true
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/porfirazin/porfirazin_molekul.png width 3000 height 2000 supersample 4
+style ball
+size stickRadius 0.14
+size ballScale 0.25
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/porfirazin/porfirazin_molekul_cubuk.png width 3000 height 2000 supersample 4
+close session
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/tetrametilporfin/tetrametilporfin.pdb
+set bgColor white
+style sphere
+color byelement
+color C #8a8a8a
+lighting soft
+lighting shadows true intensity 0.6
+lighting multiShadow 1024
+material specular 0.4 exponent 40
+graphics silhouettes true width 2 color #2a2a2a
+graphics quality 6
+turn x -35
+turn z 15
+view
+view pad 0.12
+2dlabels text "tetrametilporfin" xpos 0.03 ypos 0.92 size 28 color black bold true
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/tetrametilporfin/tetrametilporfin_molekul.png width 3000 height 2000 supersample 4
+style ball
+size stickRadius 0.14
+size ballScale 0.25
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/tetrametilporfin/tetrametilporfin_molekul_cubuk.png width 3000 height 2000 supersample 4

@@ -1,0 +1,14 @@
+{
+ "molekul": "porfin",
+ "CASCI_S1_eV": 3.6172451895755695,
+ "VQE_ideal_S1_eV": 3.613741099250331,
+ "VQE_ideal_kesik_H_S1_eV": 3.6162393071625267,
+ "kapi_S0": 8,
+ "kapi_S1": 5,
+ "pauli_terim": 121,
+ "esik": 0.001,
+ "cz_S0": 264,
+ "cz_S1": 170,
+ "sim_ham_S1_eV": 2.8250272943015045,
+ "sim_duzeltilmis_S1_eV": 4.094812261182363
+}

@@ -1,0 +1,23 @@
+close session
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/klorin/Talaporfin.pdb
+set bgColor white
+style ball
+size stickRadius 0.13
+size ballScale 0.22
+color byelement
+color C #9a9a9a
+lighting soft
+lighting shadows true intensity 0.5
+lighting multiShadow 1024
+material specular 0.4 exponent 40
+graphics silhouettes true width 2 color #2a2a2a
+graphics quality 6
+open C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/klorin/klorin_HOMO.cube
+volume #2 style surface level -0.02 color #2f6fd0 level 0.02 color #f0782f transparency 0.25 surfaceSmoothing true smoothingIterations 4
+view
+turn x -40
+turn z 20
+view pad 0.1
+2dlabels text "Talaporfin  -  Laserphyrin (Japonya) - akciger kanseri PDT" xpos 0.02 ypos 0.94 size 22 color black bold true
+2dlabels text "renkli bulutlar: bizim kuantum bolgemiz (4 orbital = 8 kubit) - HOMO" xpos 0.02 ypos 0.03 size 15 color dimgray
+save C:/Users/<KULLANICI>/Desktop/PDT_gorsel_HQ/klorin/Talaporfin_HOMO.png width 3000 height 2000 supersample 4

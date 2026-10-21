@@ -1,0 +1,17 @@
+buyukluk,deger,birim,not
+dG_PMF_WHAM,-2.7 +/- 0.6,kcal/mol,"37 pencere x 2 ns, 300 K"
+dG_deney_ITC,-3.05,kcal/mol,"Rekharsky 1997; dH -1.1, TdS +2.0"
+mod_A_orani,53.5,%,OH dar/primer kenar
+mod_B_orani,38.7,%,OH genis/sekonder kenar
+gecis_orani,7.8,%,
+Eint_gaz_tumu,-9.34 +/- 1.63,kcal/mol,"GFN2-xTB, 31 kare"
+Eint_su_tumu,-6.33 +/- 1.45,kcal/mol,ALPB
+D4_dispersiyon_tumu,-9.00 +/- 0.84,kcal/mol,~%96 dispersiyon
+MFCC_hata,-0.18 +/- 0.13,kcal/mol,tam -9.20'ye gore
+bolge_HF,+1.39,kcal/mol,"39 atom, def2-SVP, CP"
+bolge_B3LYP,+0.73,kcal/mol,
+bolge_MP2,-1.32,kcal/mol,
+bolge_B3LYP_D3BJ,-2.83,kcal/mol,
+bolge_GFN2xTB,-2.80,kcal/mol,
+kuantum_duzeltmesi_VQE_eksi_MP2,+0.0009,kcal/mol,"aktif uzay 4e,4o"
+hibrit_Eint,-1.320,kcal/mol,MP2 -1.321

@@ -1,0 +1,6 @@
+Kuantum triyaj paketi - 8 fotosensitizor
+1) bash kurulum.sh            (bir kez, ~5 dk)
+2) source ~/qenv/bin/activate
+3) nohup bash calistir.sh 4 > tarama.log 2>&1 &     (4 = ayni anda calisan molekul sayisi)
+4) Takip: tail tarama.log ; tek molekul: tail porfin.log
+5) Sonuc: tarama_sonuclari.csv ve *_sonuc.json, gercek kuantum donanimi icin *_vqe_parametreleri.json

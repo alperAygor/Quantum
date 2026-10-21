@@ -1,0 +1,9 @@
+molekul,S1_CAS44_eV,S1_CAS44_NEVPT2_eV,deney_S1_eV,deney_tipi,deney_kaynak,fark_eV,f_S1,konfig_agirlik_1,konfig_agirlik_2,triyaj,T1_dSCF_eV,S1_nm
+porfin,3.62,1.87,1.98,dogrudan,"Edwards 1971 (buhar, Qx)",-0.11,0.033,0.544,0.435,KUANTUM GEREKLI,2.0,663.0
+klorin,3.45,1.98,1.95,dogrudan (~),"Lenth/Baumert (n-alkan, 4.2 K)",0.03,0.579,0.743,0.098,klasik yeterli,1.53,626.2
+bakteriyoklorin,3.59,2.23,1.74,analog,"Reddy/Lindsey 2017, B6 (toluen)",0.49,0.422,0.748,0.168,klasik yeterli (model yetersiz),1.65,556.0
+Zn-porfin,3.75,2.07,2.18,dogrudan,Baerends 2002 (cozelti),-0.11,0.079,0.616,0.367,KUANTUM GEREKLI,2.08,599.0
+Mg-porfin,3.72,2.04,2.17,dogrudan,Devillers 2013 (DMF),-0.13,0.073,0.611,0.373,KUANTUM GEREKLI,2.05,607.8
+Pd-porfin,3.8,2.14,,yok,-,,0.085,0.629,0.355,KUANTUM GEREKLI,2.16,579.4
+porfirazin,3.74,2.24,2.065,dogrudan,"Henchy 2014 (Ne matris, 8 K)",0.175,0.633,0.788,0.139,klasik yeterli,1.65,553.5
+tetrametilporfin,3.42,1.64,1.88,vekil,"Paliteiro 2005 (meso-tetraalkil, CH2Cl2)",-0.24,0.001,0.507,0.47,KUANTUM GEREKLI (geometri supheli),1.58,756.0

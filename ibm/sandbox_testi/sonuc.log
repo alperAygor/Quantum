@@ -1,0 +1,10 @@
+
+=== porfin: S1 uyarilma enerjisi (8 kubitlik kuantum bolgesi, NEVPT2 oncesi) ===
+  Tam cozum (CASCI, klasik)               3.617 eV   (tam cozumden fark +0.000)
+  VQE, ideal simulator                    3.616 eV   (tam cozumden fark -0.001)
+  VQE, gurultulu sim (ham)                2.825 eV   (tam cozumden fark -0.792)
+  VQE, gurultulu sim (duzeltilmis)        4.095 eV   (tam cozumden fark +0.478)
+  VQE, fake_kingston (ham)                3.291 eV   (tam cozumden fark -0.326)
+  VQE, fake_kingston (duzeltilmis)        2.890 eV   (tam cozumden fark -0.727)
+  istatistik belirsizlik ~ 1.041 eV ; gurultu faktoru f(S0,S1) = 0.70, 0.55
+  Not: donanim farki (dE_donanim - dE_CASCI) dogrudan NEVPT2'li S1'e eklenebilir: S1_donanim = S1_NEVPT2 + (dE_donanim - dE_CASCI)
