@@ -26,3 +26,7 @@ qiskit-ibm.json
 
 # Telif hakkı korumalı makale PDF'leri depoya konmaz (bkz. docs/References.md)
 *.pdf
+
+# Yerel Python ortamları ve IBM çalışma klasörü
+.venv*/
+ibm/calisma/
