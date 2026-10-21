@@ -1,0 +1,23 @@
+{
+ "molekul": "porfin",
+ "yontem": "kompakt (5 kubit)",
+ "CASCI_S1_eV": 3.6170536149552657,
+ "VQE_ideal_kesik_H_S1_eV": 3.62170819093434,
+ "kesme_kaymasi_eV": 0.004656188369667635,
+ "pauli_terim": 348,
+ "olcum_grubu": 76,
+ "cx": 30,
+ "esik": 0.001,
+ "cz_S0": 60,
+ "cz_S1": 60,
+ "sim_ham_S1_eV": 3.328234917208371,
+ "sim_duzeltilmis_S1_eV": 3.638154074243533,
+ "QPU_saniye": 276,
+ "donanim": "ibm_kingston",
+ "job_id": "dbc7ngvi0auc73duc220",
+ "atis": 4096,
+ "donanim_ham_S1_eV": 2.7143394976083757,
+ "donanim_duzeltilmis_S1_eV": 4.025451870243462,
+ "istatistik_hata_eV": 0.1429572152292614,
+ "gurultu_f": 0.6742943612550732
+}

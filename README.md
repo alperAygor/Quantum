@@ -17,6 +17,16 @@ Triyaj kuralı: S1 halinde ikinci elektron konfigürasyonunun ağırlığı **> 
 | 2. Porfirin ailesi (PDT) | Hangi fotosensitizörde kuantum gerekli? | S1 hatası 0,07 eV (TD-DFT: 0,39 eV); 5 molekül "kuantum gerekli" | [`asama2_porfirin/`](asama2_porfirin/) |
 | IBM Quantum | Devre gerçek donanımda çalışıyor mu? | porfin S1, 8 kübit, ibm_kingston; gürültü düzeltmeli +0,93 ± 0,19 eV sapma | [`ibm/`](ibm/) |
 
+### IBM donanım sonuçları (porfin S1, ibm_kingston, tam çözüm CASCI = 3,617 eV)
+
+| Yöntem | Kübit | 2-kübit kapı (S0/S1) | Ham fark | Düzeltilmiş fark |
+|---|---|---|---|---|
+| `ibm/ibm_vqe.py` (ADAPT, Jordan–Wigner) | 8 | 264 / 170 | −2,48 eV | +0,93 ± 0,19 eV |
+| `ibm/ibm_vqe_kompakt.py` (21 durumluk singlet alt uzayı, 21 Ekim 2026) | 5 | 60 / 60 | −0,90 eV | **+0,41 ± 0,14 eV** |
+
+Kompakt yöntem aynı hesabı daha kısa devreyle yapar ve donanım hatasını yaklaşık yarıya indirir.
+Ham veri: [`ibm/sonuclar/`](ibm/sonuclar/), iş kimliği `dbc7ngvi0auc73duc220` (276 s QPU).
+
 Ayrıntılı teknik rapor: [`docs/00_Master_Teknik_Rapor.md`](docs/00_Master_Teknik_Rapor.md).
 
 ## Klasör yapısı
